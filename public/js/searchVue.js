@@ -45,6 +45,9 @@ var filterHeaderCountry =
     'Country';
 
 
+
+
+
 var filterHeaderCity =
     '<h4 class="filterable-heading has-icon mt-0">'+
     '<span class="icon"><img src="/img/lesson-type.svg" alt="Skill Type Icon"></span>'+
