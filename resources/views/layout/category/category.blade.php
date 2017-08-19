@@ -7,7 +7,7 @@
 
             <div data-wow-delay=".5s"  class="column is-2-tablet has-text-centered is-offset-1-tablet wow fadeInLeftBig" style="visibility: visible; animation-name: fadeInLeftBig;">
                 <a href="/{{$category->url}}">
-                    <img src="/img/{{$category->path}}" width="50" height="50" alt="Hotels" class="mb-1">
+                    <img src="/img/{{$category->path}}" width="150" height="150" alt="Hotels" class="mb-1">
                 </a>
                 <h4 class="title skill-heading in-caps">
                     <a href="/{{$category->url}}">{{$category->name_e}}</a>
