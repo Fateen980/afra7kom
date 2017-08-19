@@ -178,6 +178,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
+        App\Providers\PaginationServiceProvider::class,
 
     ],
 

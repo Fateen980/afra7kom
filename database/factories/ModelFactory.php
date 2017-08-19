@@ -22,3 +22,44 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\hotel::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'nameEng'     => $faker->unique()->name,
+        'nameAr'      => $faker->name,
+        'desc'        => $faker->paragraph,
+        'path'        => 'hotel01.jpg',
+        'country'     => '1',
+        'city'        => '1',
+        'rateSatr'    => $faker->numberBetween(1,5),
+        'userSatr'    => $faker->numberBetween(1,5)
+
+    ];
+});
+
+$factory->define(App\hotelDetail::class, function ($faker) use ($factory)  {
+
+    return [
+        'hotel_id' => $factory->create(App\hotel::class)->id,
+
+        'lobby'   => '1',
+        'wifi'    => '1',
+        'pool'    => '1',
+        'restaurant'    => '1',
+        'bar'    => '1',
+        'parking'    => '1',
+        'gym'    => '1',
+        'ac'    => '1',
+        'pets'    => '1',
+        'address'    => $faker->address,
+        'email'    => $faker->email,
+        'number'    => $faker->phoneNumber,
+        'latitude'    => $faker->latitude,
+        'longitude'    => $faker->longitude,
+
+
+    ];
+});
+

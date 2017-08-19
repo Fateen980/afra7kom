@@ -5,9 +5,8 @@
 @section('content')
 
     @include('layout.nav.nav')
-    @include('layout.nav.navTitle')
-
-    @include('layout.category.category')
+    @include('hotels.sideSearch')
+    @include('hotels.bodySearch')
 
 
 @endsection
