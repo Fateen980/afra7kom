@@ -65,8 +65,9 @@
 <script src="https://cdn.jsdelivr.net/instantsearch-googlemaps/1/instantsearch-googlemaps.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="js/vue.js"></script>
-<script src="js/all/all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-strap/1.1.37/vue-strap.js"></script>
 <script src="js/searchVue.js"></script>
+<script src="js/all/all.js"></script>
 
 
 

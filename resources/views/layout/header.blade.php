@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
     <link rel="stylesheet" href="{!! asset('css/mini.css')!!}">
     <link rel="stylesheet" href="{!! asset('css/hotelComponent.css')!!}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
     <script>
         window.LARACASTS = {"signedIn":false,"csrfToken":"{{ csrf_token() }}","stripeKey":"pk_live_42cAcd2OvCDs4hpErd5ZscBT","user":null};

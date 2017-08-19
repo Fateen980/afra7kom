@@ -22,14 +22,3 @@ Vue.use(InstantSearch);
  */
 
 Vue.component('example', require('./components/Example.vue'));
-Vue.component('alert', require('./components/Alert.vue'));
-
-new Vue({
-
-    el:'#app',
-
-    components: {
-        'alert': alert
-    }
-
-});

@@ -11,22 +11,25 @@ var hitTemplate =
     '</div>'+
     '</div>'+
     '<div class="conversation-list-title">' +
-    '<h4 class="title is-5">' +
+    '<h4 class="title is-1">' +
     '<a href="/" class="ais-highlight">{{{_highlightResult.nameEng.value}}}</a>' +
     '</h4>' +
     '<div class="meta in-caps mb-1">' +
     '<span>' +
     '<a href="/" class="is-link" style="color: rgb(245, 104, 87)" class="ais-highlight">{{{_highlightResult.nameEng.value}}}</a>' +
-    '<a href="/" class="ais-highlight">{{{_highlightResult.nameEng.value}}}</a>' +
+    '<a href="/" class="ais-highlight">&nbsp{{{_highlightResult.nameEng.value}}}</a>' +
     '</span>' +
-    'by <a href="/">Fateen</a>'+
+    '&nbspby <a href="/">&nbspFateen</a>'+
     '</div>'+
     '<div class="content">' +
     '{{{_highlightResult.desc.value}}}' +
     '<span class="is-muted">...</span>'+
     '</div>'+
     '</div>'+
+
     '<div class="conversation-list-reply-count is-hidden-mobile">' +
+    '<h3 class="has-text-centered is-bold title is-4 mbt-1">'+
+    '$540.00 </h3>'+
     '<span class="ais-star-rating--star"></span>'+
     '<span class="ais-star-rating--star"></span>'+
     '<span class="ais-star-rating--star"></span>'+
@@ -60,7 +63,7 @@ var facetTemplateCheckbox = '<div class="ais-refinement-list__item">'+
 
 
 var lobbyTemplateCheckbox = '<div class="ais-refinement-list__item">'+
-    '<label><input type="checkbox" value="{{name}}"  {{#isRefined}}checked{{/isRefined}}>'+
+    '<label ><input type="checkbox" value="{{name}}"  {{#isRefined}}checked{{/isRefined}}>'+
     '<span class="ais-refinement-list__value">{{name}}</span>'+
     '<span class="ais-refinement-list__count">{{count}}</span></label></div>';
 
