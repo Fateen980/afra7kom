@@ -11,12 +11,7 @@
 |
 */
 
-//Route::get('/','categoryController@index');
-Route::get('/',function(){
-
-    return view('test');
-
-});
+Route::get('/','categoryController@index');
 Route::get('/hotels','hotelController@index');
 
 Route::get('/search', [
