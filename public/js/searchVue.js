@@ -149,7 +149,7 @@ hotel.addWidget(rangeSlider);
 var Widget = instantsearch.widgets.hits({
 
         container   : '#hits',
-        hitsPerPage : 10,
+        hitsPerPage : 15,
         templates   : {
             item: hitTemplate,
             empty: "No results matched your query <em>\"{{query}}\"</em>"
