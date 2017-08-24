@@ -64,7 +64,7 @@
 <script src="{{asset('js/all/all.js')}}"></script>
 @endif
 
-@if($loadJs = 0)
+@if($loadJs = 1)
     <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/instantsearch-googlemaps/1/instantsearch-googlemaps.min.js"></script>
