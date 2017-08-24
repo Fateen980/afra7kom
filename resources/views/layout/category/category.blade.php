@@ -1,29 +1,32 @@
-<section class="skills is-greydient bb-0">
+<div class="section">
     <div class="container">
-        <div class="columns is-mobile is-multiline">
+            <div class="columns is-multiline is-justified-space-between">
+
 
             @if(! empty($categories))
                 @foreach($categories as $category)
+<div class="card column w-100-mobile is-4">
+        <div class="card-content">
+            <div class="media">
+                    <div class="media-content">
+<p class="title is-4"><a href="/{{$category->url}}">{{$category->name_e}}</a></p>
+<p class="subtitle is-6">Comming Soon !</p></div></div>
+<div class="content">
 
-            <div data-wow-delay=".5s"  class="column is-2-tablet has-text-centered is-offset-1-tablet wow fadeInLeftBig" style="visibility: visible; animation-name: fadeInLeftBig;">
-                <a href="/{{$category->url}}">
-                    <img src="/img/{{$category->path}}" width="145" height="145" alt="Hotels" class="mb-1">
-                </a>
-                <h4 class="title skill-heading in-caps">
-                    <a href="/{{$category->url}}">{{$category->name_e}}</a>
-                </h4>
-                <span class="h-divider"></span>
-                <ul>
-                    <li><strong class="color-success">15</strong>
-                        <span class="color-text-lighter">near by</span></li>
-                    <li><strong class="color-primary">710</strong>
-                        <span class="color-text-lighter">all</span>
-                    </li>
-                </ul>
-            </div>
+    <div class=" is-12  ">
+        <a href="/{{$category->url}}">
+            <img src="/img/{{$category->path}}" alt="I {Heart} Active Record Shirt" class="b-1"></a>
+</div>
 
 
-                @endforeach
-            @endif
 
-        </div></div></section>
+{{$category->description}}
+</div></div></div>
+
+
+
+
+@endforeach
+@endif
+
+</div></div></div>

@@ -14,13 +14,13 @@
 Route::get('/','categoryController@index');
 Route::get('/hotels','hotelController@index');
 
-Route::get('/search', [
-    'as' => 'search',
-    'uses' => 'hotelController@search'
-]);
+Route::get('/search','searchController@index');
+
+
 
 Route::get('/test','contactController@index');
 Route::get('/hotels/search','hotelController@searchSuggestion');
+Route::get('/hotels/detail/{id?}','hotelDetailController@index');
 
 
 

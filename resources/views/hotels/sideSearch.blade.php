@@ -35,7 +35,14 @@
 
         <li class="filterable-item" id="ratingItem"></li>
         <li class="filterable-item" id="price"></li>
-        <li class="filterable-item" id="is-lobby"></li>
+        <li class="filterable-item" id="is-lobby">
+            <h4 class="filterable-heading has-icon mt-0">
+              <span class="icon"><img src="/img/lesson-type.svg" alt="Skill Type Icon"></span>
+                Search Options
+            </h4>
+
+
+        </li>
         <li class="filterable-item" id="filterItemCountry"></li>
         <li class="filterable-item" id="filterItemCity"></li>
 

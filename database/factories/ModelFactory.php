@@ -63,3 +63,14 @@ $factory->define(App\hotelDetail::class, function ($faker) use ($factory)  {
     ];
 });
 
+$factory->define(App\lobby::class, function ($faker) use ($factory)  {
+
+    return [
+        'hotel_id' => $factory->create(App\hotel::class)->id,
+
+
+        'name'    => $faker->name,
+        'price'    => $faker->numberBetween($min = 0, $max = 12000),
+
+    ];
+});

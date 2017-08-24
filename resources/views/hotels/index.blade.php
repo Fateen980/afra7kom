@@ -6,7 +6,7 @@
 
     @include('layout.nav.nav')
     @include('hotels.sideSearch')
-    @include('hotels.bodySearch')
+    @include('hotels.bodySearch',['loadJs' => 1])
 
 
 @endsection
