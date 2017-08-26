@@ -245,7 +245,7 @@ var listlobby =
 
             console.log(rawData)
             return {
-                name : rawData.name == 0 ? 'Lobby' : 'Lobby',
+                name : rawData.name == 0 ? 'Wedding Lobby' : 'Wedding Lobby',
                 isRefined : rawData.isRefined == false ? 0 : 1 ,
                 count : rawData.count,
                 highlighted:1
