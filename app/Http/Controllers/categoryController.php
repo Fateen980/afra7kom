@@ -21,7 +21,7 @@ class categoryController extends Controller
 
     public function show(Request $request, Category $category){
 
-        
+
         $categories =  $category->all();
 
         return response()->json($categories, 200);

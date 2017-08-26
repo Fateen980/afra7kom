@@ -23,6 +23,15 @@ class CreateHotelsTable extends Migration
             $table->integer('city');
             $table->integer('rateSatr');
             $table->integer('userSatr');
+            $table->integer('lobby');
+            $table->integer('wifi');
+            $table->integer('pool');
+            $table->integer('restaurant');
+            $table->integer('bar');
+            $table->integer('parking');
+            $table->integer('gym');
+            $table->integer('ac');
+            $table->integer('pets');
 
             $table->timestamps();
         });

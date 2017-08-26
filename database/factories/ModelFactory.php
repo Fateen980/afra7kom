@@ -31,10 +31,19 @@ $factory->define(App\hotel::class, function (Faker\Generator $faker) {
         'nameAr'      => $faker->name,
         'desc'        => $faker->paragraph,
         'path'        => 'hotel01.jpg',
-        'country'     => '1',
-        'city'        => '1',
+        'country'     => '0',
+        'city'        => '3',
         'rateSatr'    => $faker->numberBetween(1,5),
-        'userSatr'    => $faker->numberBetween(1,5)
+        'userSatr'    => $faker->numberBetween(1,5),
+        'lobby'   => '0',
+        'wifi'    => '0',
+        'pool'    => '0',
+        'restaurant'    => '0',
+        'bar'    => '1',
+        'parking'    => '0',
+        'gym'    => '1',
+        'ac'    => '1',
+        'pets'    => '0'
 
     ];
 });

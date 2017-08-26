@@ -16,9 +16,6 @@ class hotelDetailController extends Controller
 
         return view('hotels.detail.index',compact('detail'));
 
-
-
-
     }
 
 }

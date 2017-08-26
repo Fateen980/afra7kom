@@ -60,11 +60,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 
-@if( empty($loadJs))
+@if( ! empty($loadJs))
 <script src="{{asset('js/all/all.js')}}"></script>
 @endif
 
-@if($loadJs = 1)
+@if( empty($loadJs))
     <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/instantsearch-googlemaps/1/instantsearch-googlemaps.min.js"></script>
@@ -73,10 +73,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-strap/1.1.37/vue-strap.js"></script>
     <script src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
     <script src="{{asset('js/searchVue.js')}}"></script>
+
 @endif
-
-
-
 
 
 </body>
