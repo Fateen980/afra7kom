@@ -24,4 +24,9 @@ Route::get('/hotels/detail/{id?}','hotelDetailController@index');
 
 
 
+//API
+
+Route::get('/category','categoryController@show');
+
+
 
