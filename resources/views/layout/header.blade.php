@@ -15,6 +15,13 @@
     <link rel="stylesheet" href="{!! asset('css/hotelComponent.css')!!}">
 
 
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
+
+
     <script>
         window.LARACASTS = {"signedIn":false,"csrfToken":"{{ csrf_token() }}","stripeKey":"pk_live_42cAcd2OvCDs4hpErd5ZscBT","user":null};
     </script>

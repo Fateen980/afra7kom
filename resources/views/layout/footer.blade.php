@@ -56,8 +56,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 
 @if( ! empty($loadJs))

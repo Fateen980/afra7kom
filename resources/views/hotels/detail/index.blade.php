@@ -4,6 +4,7 @@
 
     @include('layout.nav.nav')
 
+
     @include('hotels.detail.content')
 
 

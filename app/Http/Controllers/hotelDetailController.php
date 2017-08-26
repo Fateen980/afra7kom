@@ -14,7 +14,7 @@ class hotelDetailController extends Controller
 
         $detail =  DB::table('hotels')->where('id',$id)->first();
 
-        return view('hotels.detail.index',compact('detail'));
+        return view('hotels.detail.index',compact('detail'),['loadJs' => 1]);
 
     }
 

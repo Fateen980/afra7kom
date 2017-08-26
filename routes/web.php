@@ -23,10 +23,22 @@ Route::get('/hotels/search','hotelController@searchSuggestion');
 Route::get('/hotels/detail/{id?}','hotelDetailController@index');
 
 
+Route::get('/hotels/detail/{id?}','hotelDetailController@index');
+
 
 //API
 
 Route::get('/category','categoryController@show');
 
 
+Route::get('/join', function(){
 
+        return view('auth.register');
+
+});
+
+Route::get('/login', 'HomeController@index')->name('home');
+Auth::routes();
+
+Route::get('/reserve/{id?}', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
