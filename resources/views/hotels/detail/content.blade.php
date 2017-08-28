@@ -1,91 +1,59 @@
 
+<div class="section">
+    <div class="container">
 
+        <div class="columns">
 
+                <div class="column is-6">
 
-
-<div class="container">
-<section>
-
-
-
-
-
-
-
-    <div class="columns is-desktop is-vertically-centered-desktop mb-5">
-    <div class="video-details column is-6-desktop pr-3-desktop ">
-        <div class="wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-            <button class="lesson-complete-button">
-                <span>
-        {{$detail->nameEng}}
-    </span></button></div> <p class="video-details-publish-date in-caps is-bold">
-
-        </p> <h1 class="title is-1">
-            {{$detail->nameEng}}
-        </h1> <p class="is-bold in-caps mb-2"><span style="margin-right: 7px;">
-
-</span> <span class="color-primary">
-
-</span></p> <div class="video-details-buttons mb-1-mobile">
-
-            <button class="button is-naked p-0">
-            <a href="/reserve/{{$detail->id}}" title="Download Video">
-                <span data-toggles="is-active" class="button for-like is-outlined is-primary is-toggle "><span class="icon-like"></span> <span>Reserve Now</span></span></button>
-            </a>
-            </div></div>
-    <div class="video-description column is-6-desktop content">
-
-        <div id="section">
-
-            <div class="container">
-
-
-                <div class="columns">
-
-                    <div class="column is-12">
-
-
-
+                    <div class="tile is-parent">
+                        <article class="tile is-child box">
+                            <p class="title">{{$detail->nameEng}}</p>
+                            <p class="subtitle">{{$detail->nameEng}}</p>
+                            <figure class="image is-4by3">
+                                <img src="{{asset('img/hotels/'.$detail->path)}}">
+                            </figure>
+                        </article>
                     </div>
-
-
 
                 </div>
+                <div class="column is-6">
 
-                <div class="columns">
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child box">
+                            <p class="subtitle">
+                            <div class="video-details-buttons mb-1-mobile">
 
-                    <div class=" column is-6">
+                                <button class="button is-naked p-0">
+                                    <a href="/reserve/{{$detail->id}}" title="Download Video">
+                                        <span data-toggles="is-active" class="button for-like is-outlined is-primary is-toggle "><span class="icon-like"></span> <span>Reserve Now</span></span></button>
+                                </a>
+                            </div>
 
-                    <img src="{{asset('img/hotels/'.$detail->path)}}">
 
+                            </p>
+                        </article>
+                        <article class="tile is-child box">
+                            <p class="title">{{$detail->nameEng}}</p>
+                            <p></p>
+                            <p class="subtitle">{{$detail->desc}}</p>
+                        </article>
                     </div>
 
-                    <div class=" column is-6">
-
-                        <p>{{$detail->desc}}</p>
-
-                    </div>
-
+                    <article class="message is-primary">
+                        <div class="message-body">
+                            This stunning resort occupies an equally stunning setting with panoramic views across the bay. Designed in traditional Moorish style with an impressive interior, it exudes elegance inside and out. As you relax by one of five swimming pools soak up the luxurious ambience, before wandering down to the golden beach . The first class service is matched by an impressive choice of facilities, including a selection of fine restaurants, activities and well-appointed rooms.
+                        </div>
+                    </article>
 
                 </div>
-
             </div>
 
         </div>
 
 
-
-
     </div>
 
-</div>
-
-
-
-    <div class="bar section is-small is-justified-to-center-mobile has-text-centered-mobile"><div class="container"><ul class="level"><li class="level-item is-narrow">
-                    This stunning resort occupies an equally stunning setting with panoramic views across the bay. Designed in traditional Moorish style with an impressive interior, it exudes elegance inside and out. As you relax by one of five swimming pools soak up the luxurious ambience, before wandering down to the golden beach . The first class service is matched by an impressive choice of facilities, including a selection of fine restaurants, activities and well-appointed rooms.
-                </li>
-                </ul></div></div>
 
 
 
@@ -103,7 +71,18 @@
                     <div class="timeline-contents column is-9">
 
                         <div class="timeline-contents-item mb-4">
-                            Positioned on its own private beach with the Far - Garden coral reef directly in front of the shore.  A free shuttle service operates to Naama Bay, 6 km away.
+                            <article class="message is-info">
+                                <div class="message-body">
+
+                                    <article class="tile is-child notification is-warning">
+                                        <p class="title">Location</p>
+                                    </article>
+
+
+                                    Positioned on its own private beach with the Far - Garden coral reef directly in front of the shore.  A free shuttle service operates to Naama Bay, 6 km away.
+                                </div>
+                            </article>
+
                         </div></div></div>
 
                     <div class="columns timeline-section">
@@ -112,7 +91,7 @@
                         <div class="timeline-contents column is-9">
                             <div class="timeline-contents-item mb-4">
 
-                                <ul>
+                                    <ol>
 
                                     <li>5 outdoor swimming pools & separate children’s pool</li>
                                     <li>Private beach</li>
@@ -125,7 +104,8 @@
                                     <li>Guest Relation Desk</li>
                                     <li>Fitness, Tennis, Squash, table tennis</li>
 
-                                </ul>
+                                    </ol>
+
 
 
 
@@ -161,10 +141,14 @@
                         <button class="delete"></button></header>
 
 
-</section>
+                </div>
 
 
-</div>
+            </div>
+        </div>
+    </div>
+
+
 
 
 

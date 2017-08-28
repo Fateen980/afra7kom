@@ -3,13 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Afra7kom is a booking hotels for wedding">
     <meta property="og:site_name" content="Afra7kom">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="{!! asset('img/favicon.ico')!!}" sizes="16x16"/>
+
+    <!-- Fonts -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Css -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
     <link rel="stylesheet" href="{!! asset('css/mini.css')!!}">
     <link rel="stylesheet" href="{!! asset('css/hotelComponent.css')!!}">

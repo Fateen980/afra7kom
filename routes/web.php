@@ -33,7 +33,7 @@ Route::get('/category','categoryController@show');
 
 Route::get('/join', function(){
 
-        return view('auth.register');
+        return view('auth.register',['loadJs' => '1']);
 
 });
 

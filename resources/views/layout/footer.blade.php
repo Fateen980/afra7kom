@@ -68,8 +68,8 @@
     <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/instantsearch-googlemaps/1/instantsearch-googlemaps.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="{{asset('js/vue.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-strap/1.1.37/vue-strap.js"></script>
+    {{--<script src="{{asset('js/all/all.js')}}"></script>--}}
+    <script src="{{asset('js/all/vue.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
     <script src="{{asset('js/searchVue.js')}}"></script>
 
