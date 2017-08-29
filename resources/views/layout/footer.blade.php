@@ -54,13 +54,27 @@
 
 
 
+<script>
+    function initMap() {
+        var uluru = {lat: 31.963158, lng: 35.930359};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJBz8ItB48OzWVPKEJ6OCkuoKgLUuudmI&callback=initMap">
+</script>
 
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-
 @if( ! empty($loadJs))
-<script src="{{asset('js/all/all.js')}}"></script>
+    <script src="{{asset('js/all/all.js')}}"></script>
 @endif
 
 @if( empty($loadJs))

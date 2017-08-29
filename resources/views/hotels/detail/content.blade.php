@@ -1,4 +1,5 @@
 
+
 <div class="section">
     <div class="container">
 
@@ -13,6 +14,7 @@
                             <figure class="image is-4by3">
                                 <img src="{{asset('img/hotels/'.$detail->path)}}">
                             </figure>
+
                         </article>
                     </div>
 
@@ -42,6 +44,7 @@
 
                     <article class="message is-primary">
                         <div class="message-body">
+
                             This stunning resort occupies an equally stunning setting with panoramic views across the bay. Designed in traditional Moorish style with an impressive interior, it exudes elegance inside and out. As you relax by one of five swimming pools soak up the luxurious ambience, before wandering down to the golden beach . The first class service is matched by an impressive choice of facilities, including a selection of fine restaurants, activities and well-appointed rooms.
                         </div>
                     </article>
@@ -54,6 +57,28 @@
 
     </div>
 
+
+<div class="section">
+
+    <div class="container">
+
+        <div class="columns">
+
+            <div class="column">
+
+                <div id="map"></div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
 
 
 
