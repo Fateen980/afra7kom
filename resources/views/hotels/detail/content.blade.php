@@ -26,10 +26,24 @@
                             <p class="subtitle">
                             <div class="video-details-buttons mb-1-mobile">
 
-                                <button class="button is-naked p-0">
-                                    <a href="/reserve/{{$detail->id}}" title="Download Video">
-                                        <span data-toggles="is-active" class="button for-like is-outlined is-primary is-toggle "><span class="icon-like"></span> <span>Reserve Now</span></span></button>
-                                </a>
+                                <div class="columns">
+
+                                    <div class="column">
+
+                                        <div class="column is-10 is-offset-1">
+                                            <a href="/hotels" class="button is-success is-default mb-1-mobile w-100-mobile">Search More</a>
+                                            <button class="button is-naked p-0">
+                                                <a href="/reserve/{{$detail->id}}" title="Download Video">
+                                                    <span data-toggles="is-active" class="button for-like is-outlined is-primary is-toggle "><span class="icon-like"></span> <span>Reserve Now</span></span></button>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
                             </div>
 
 
