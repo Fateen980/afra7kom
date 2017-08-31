@@ -29,7 +29,7 @@ Route::get('/payment','paymentController@index');
 
 //API
 Route::get('/category','categoryController@show');
-Route::get('/getHotels',function (){
+Route::get('/gethotels',function (){
 
    return Hotel::all();
 
