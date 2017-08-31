@@ -21,12 +21,32 @@
                     Search
                 </button></form></div> <span class="nav-toggle"><span></span>
             <span></span> <span></span></span>
+        @if (Auth::guest())
         <div class="nav-right nav-menu">
             <a href="/join" class="nav-item is-bold in-caps">
                 Sign Up
             </a> <a href="/login" class="nav-item is-bold color-primary in-caps">
                 Sign In
-            </a></div></div></nav>
+            </a></div>
+        @else
+            <div class="nav-right nav-menu">
+            <a class="nav-item is-bold color-primary in-caps" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                Logout
+            </a>
+            </div>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+
+
+        @endif
+
+
+
+    </div></nav>
 
 
 <nav class="nav-bottom  is-hidden-tablet ">

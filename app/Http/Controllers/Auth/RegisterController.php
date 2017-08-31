@@ -34,10 +34,12 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+//    public function __construct()
+//    {
+//
+//        $this->middleware('guest');
+//
+//    }
 
     /**
      * Get a validator for an incoming registration request.
@@ -48,9 +50,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'city'     => 'required|string|max:255',
+            'country'  => 'required|string',
+            'phone'    => 'required|string|max:15|unique:user_details',
+            'address'  => 'required|string|max:255'
         ]);
     }
 
@@ -62,10 +68,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+
+        $data['password'] = bcrypt($data['password']);
+        $user = User::create($data);
+        $user->userDetail()->create($data);
+        return $user;
+
     }
 }

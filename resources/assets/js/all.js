@@ -1,9 +1,10 @@
+import axios from 'axios';
 import Vue from 'vue'
 import VeeValidate from 'vee-validate';
 import validateForm from './components/validate.vue'
+import VueAxios from 'vue-axios'
 
-
-
+Vue.use('VueAxios','axios');
 
 const config = {
     errorBagName: 'errors', // change if property conflicts.
@@ -28,45 +29,11 @@ const config = {
 };
 
 Vue.use(VeeValidate, config);
-
-Vue.component('validate', validateForm , {
-
-        props:['name','title'],
-        data:function(){
-
-            return {
-                isDisabled:false
-            }
-        },
-        methods:{
-
-            validateFormHere:function(){
-
-                this.$emit('applied')
-            }
-        },
-        mounted:function(){
-
-
-            console.log(this.$children)
-
-        }
-
-});
+Vue.component('validate', validateForm);
 
 
 new Vue({
 
-  el:'#root',
-
-
-    methods:{
-
-        validateFormHere:function(){
-
-            alert('fateen')
-        }
-
-    }
+  el:'#root'
 });
 

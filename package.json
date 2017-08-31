@@ -20,7 +20,9 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "vee-validate": "^2.0.0-rc.14",
+    "vue-axios": "^2.0.2",
     "vue-instantsearch": "^0.6.0"
   }
 }

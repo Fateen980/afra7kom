@@ -1,7 +1,10 @@
 
 <template>
 
-    <form id="billing-form" method="POST"  action="/login">
+    <form id="billing-form" method="POST"  action="/login" @submit.prevent="onSubmit"  v-model="formData" @keyup="onTyping">
+
+        <slot></slot>
+
         <fieldset class="box">
         <p class="box">
             <legend> Registration Info</legend>
@@ -9,27 +12,42 @@
             <input type="hidden" name="size" value="x-large">
 
             <p :class="{ 'control': true }">
-                <span v-if="errors.has('name')" class="help is-danger">{{ errors.first('name') }}</span>
-                <input type="text" name="name"  id="name" v-validate="'required|min:3'" value=""  placeholder="Full Name" class="input" :class="{'input': true, 'is-danger': errors.has('name') }" >
-            </p>
+            <input type="text" name="name" v-model="formData.name"   id="name" v-validate="'required|min:3'" value=""  placeholder="Full Name" class="input" :class="{'input': true, 'is-danger': errors.has('name') }" >
+            <span v-if="errors.has('name')" class="help is-danger">{{ errors.first('name') }}</span>
+        </p>
 
             <p :class="{ 'control': true }">
+                <input type="text" name="email" v-model="formData.email" id="email" v-validate="'required|email'" value=""  placeholder="Email" class="input" :class="{'input': true, 'is-danger': errors.has('email') }" >
                 <span v-if="errors.has('email')"  class="help is-danger">{{ errors.first('email') }}</span>
-                <input type="text" name="email" id="email" v-validate="'required|email'" value=""  placeholder="Email" class="input" :class="{'input': true, 'is-danger': errors.has('email') }" >
             </p>
 
             <p :class="{ 'control': true }">
+                <input type="password" name="password" v-model="formData.password"   id="password" v-validate="'required|min:6'" value=""  placeholder="Password" class="input" :class="{'input': true, 'is-danger': errors.has('password') }" >
+                <span v-if="errors.has('password')" class="help is-danger">{{ errors.first('password') }}</span>
+            </p>
+
+            <p :class="{ 'control': true }">
+                <input id="confirmed" v-validate="'required|min:6|confirmed:password'" v-model="formData.password_confirmation"  name="password_confirmation" type="password" placeholder="Repeat Password"  class="input" :class="{'input': true, 'is-danger': errors.has('password_confirmation') }">
+                <span class="help is-danger" v-if="errors.has('password_confirmation')">
+               The Password confirmation does not match. Try again, please.
+                </span>
+            </p>
+
+
+
+            <p :class="{ 'control': true }">
+                <input type="text" name="address" v-model="formData.address" id="address" v-validate="'required|min:3'" value=""  placeholder="Address" class="input" :class="{'input': true, 'is-danger': errors.has('address') }" >
                 <span v-if="errors.has('address')" class="help is-danger">{{ errors.first('address') }}</span>
-                <input type="text" name="address" id="address" v-validate="'required|min:3'" value=""  placeholder="Address" class="input" :class="{'input': true, 'is-danger': errors.has('address') }" >
             </p>
 
             <p :class="{ 'control': true }">
-             <span v-if="errors.has('city')" class="help is-danger">{{ errors.first('city') }}</span>
-            <input type="text" name="city" v-validate="'required|min:3'" id="city" value="" placeholder="City" required="required" class="input" :class="{'input': true, 'is-danger': errors.has('city') }" >
+            <input type="text" name="city" v-model="formData.city" v-validate="'required|min:3'" id="city" value="" placeholder="City"  class="input" :class="{'input': true, 'is-danger': errors.has('city') }" >
+                <span v-if="errors.has('city')" class="help is-danger">{{ errors.first('city') }}</span>
             </p>
 
 
-            <div class="control"><span class="select w-100"><select name="country" id="country" class="w-100"><option value="us">
+            <div class="control"><span class="select w-100">
+                <select name="country" v-model="formData.country" id="country" class="w-100"><option value="us">
 United States
 </option> <option value="af">
 Afghanistan
@@ -505,25 +523,127 @@ Zambia
 Zimbabwe
 </option></select></span></div>
             <p :class="{ 'control': true }">
+                <input type="text" name="phone" v-model="formData.phone" id="state" v-validate="'required|numeric|min:10'" value="" placeholder="001-216-372-7842" class="input" :class="{'input': true, 'is-danger': errors.has('phone') }">
                 <span v-if="errors.has('phone')" class="help is-danger">{{ errors.first('phone') }}</span>
-                <input type="text" name="phone" id="state" v-validate="'required|alpha_dash'" value="" placeholder="001-216-372-7842" class="input" :class="{'input': true, 'is-danger': errors.has('phone') }">
-                </p>
-            <div><input type="hidden" name="stripeToken"> <div class="control is-grouped">
+            </p>
+
+
                 <p class="control">
 
-                    <button type="button"     class="button is-primary">Sign Up</button></p>
-                <p class="help is-muted ml-1">
+                    <article class="message is-primary" v-if="isSuccess">
+                        <div class="message-body">
+                            <strong>You have successfully registered , Thank you for your interest . </strong>
+                        </div>
+                    </article>
 
-                </p> <p class="control is-vertically-centered fs-smaller is-muted" style="display: none;">
+                </p>
+            <article class="message is-danger" v-show="isError">
+                <div class="message-body">
+                    <ul >
+                        <li v-for="errorrs  in resultError">
+                                    {{errorrs[0]}}
+                        </li>
+                    </ul>
+                </div>
+            </article>
+            <div>
+                <input type="hidden" name="stripeToken">
+                <div class="control is-grouped">
 
-            </p> <p class="control" style="display: none;">
-                <button type="button" id="apple-pay-button" disabled="disabled" class="button"></button></p>
+                    <button type="submit" :disabled="isDisabled" class="button is-success is-outlined is-submit">
+                        Sign Up!
+                    </button>
+
+
 
             </div>
-                <div class="control" style="display: none;">
-                    <label class="checkbox fs-smaller">
-                        <input type="checkbox" checked="checked" disabled="disabled">
 
-                    </label></div></div></fieldset></form>
+
+            </div></fieldset>
+
+    </form>
+
+
 
 </template>
+
+<script>
+
+
+
+
+    export default {
+        name:'validate',
+        inject: ['$validator'],
+        validator:null,
+
+        data() {
+            return {
+                title: '',
+                searching: false,
+                isDisabled:true,
+                isSuccess:false,
+                isError : false,
+                resultError:[],
+                validateError:{},
+                formData:{
+
+                    country:'jo'
+
+                }
+            }
+        },
+    mounted() {},
+
+        methods: {
+            onSubmit() {
+
+                this.$validator.validateAll().then(result => {
+
+
+                    if (result) {
+
+                        axios.post('/register',this.formData)
+                            .then(response => {
+                                // JSON responses are automatically parsed.
+                                this.isSuccess  = true;
+                                this.isError    = false;
+                                this.isDisabled = true;
+                                this.formData   = {country:'jo'}
+                            })
+                            .catch(error => {
+
+                                   this.isError     = true;
+                                   this.isDisabled  = true;
+                                   this.resultError = error.response.data;
+
+                                });
+
+
+                    }
+                }).catch(() => {
+
+                        // something went wrong (non-validation related).
+                });
+
+            },
+            onTyping(){
+
+                this.isSuccess = false;
+                this.$validator.validateAll().then(result => {
+
+                    if(result)
+                        this.isDisabled = false;
+                    else
+                        this.isDisabled = true;
+
+
+                });
+
+
+            }
+
+        }
+    }
+
+</script>

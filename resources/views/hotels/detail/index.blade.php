@@ -3,8 +3,7 @@
 @section('content')
 
     @include('layout.nav.nav')
-
-
+    @include('layout.nav.breadcrumb')
     @include('hotels.detail.content')
 
 

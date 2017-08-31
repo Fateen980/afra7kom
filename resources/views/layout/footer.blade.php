@@ -52,7 +52,7 @@
 </div>
 </div>
 
-
+@if ( empty($loadJs))
 
 <script>
     function initMap() {
@@ -67,12 +67,18 @@
         });
     }
 </script>
+
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJBz8ItB48OzWVPKEJ6OCkuoKgLUuudmI&callback=initMap">
 </script>
 
-<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
 
+@endif
+
+
+
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @if( ! empty($loadJs))
     <script src="{{asset('js/all/all.js')}}"></script>
 @endif

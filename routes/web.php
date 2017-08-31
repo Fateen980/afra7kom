@@ -12,7 +12,10 @@
 */
 
 Route::get('/','categoryController@index');
-Route::get('/hotels','hotelController@index');
+
+Route::get('/home/page', ['as' => 'back', 'uses' => 'categoryController@index' ]);
+
+Route::get('/hotels','hotelController@index')->name('hotels');
 
 Route::get('/search','searchController@index');
 
@@ -30,14 +33,15 @@ Route::get('/hotels/detail/{id?}','hotelDetailController@index');
 
 Route::get('/category','categoryController@show');
 
-
 Route::get('/join', function(){
 
         return view('auth.register',['loadJs' => '1']);
 
 });
 
+Route::post('/register','RegisterController@create');
 Route::get('/login', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('/reserve/{id?}', 'HomeController@index')->name('home');
