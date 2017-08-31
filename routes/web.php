@@ -11,27 +11,31 @@
 |
 */
 
+use App\hotel as Hotel;
+
 Route::get('/','categoryController@index');
-
 Route::get('/home/page', ['as' => 'back', 'uses' => 'categoryController@index' ]);
-
 Route::get('/hotels','hotelController@index')->name('hotels');
-
 Route::get('/search','searchController@index');
-
 
 
 Route::get('/test','contactController@index');
 Route::get('/hotels/search','hotelController@searchSuggestion');
 Route::get('/hotels/detail/{id?}','hotelDetailController@index');
 
-
 Route::get('/hotels/detail/{id?}','hotelDetailController@index');
 
+Route::get('/payment','paymentController@index');
 
 //API
-
 Route::get('/category','categoryController@show');
+Route::get('/getHotels',function (){
+
+   return Hotel::all();
+
+});
+
+
 
 Route::get('/join', function(){
 

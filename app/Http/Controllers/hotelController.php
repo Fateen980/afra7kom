@@ -21,6 +21,18 @@ class hotelController extends Controller
 
         }
 
+
+        public function getHotels(){
+
+            $hotels = Hotel::all();
+
+            dd(compact('hotels'));
+
+
+        }
+
+
+
         public function search(Request $request)
         {
             // First we define the error message we are going to show if no keywords
@@ -58,7 +70,6 @@ class hotelController extends Controller
 
         }
 
-            dd($suggestions);
         return $suggestions;
     }
 
