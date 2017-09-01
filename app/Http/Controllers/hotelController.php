@@ -17,7 +17,7 @@ class hotelController extends Controller
 
             $hotels = DB::table('hotels')->paginate(15);
 
-            return view('hotels.index',compact('hotels'));
+            return view('hotels.index',compact('hotels'))->with('loadJs',0);
 
         }
 

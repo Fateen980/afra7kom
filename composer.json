@@ -7,14 +7,17 @@
     "require": {
         "php": ">=5.6.4",
         "algolia/algoliasearch-client-php": "^1.18",
+        "cartalyst/stripe-laravel": "2.0.*",
         "fzaninotto/faker": "~1.4",
+        "kartik-v/bootstrap-star-rating": "@dev",
         "laracasts/generators": "dev-master as 1.1.4",
         "laracasts/testdummy": "^2.3",
+        "laravel/cashier": "~7.0",
+        "laravel/cashier-braintree": "~2.0",
         "laravel/framework": "5.4.*",
         "laravel/scout": "^3.0",
         "laravel/tinker": "~1.0",
-        "laravelcollective/html": "^5.2.0",
-        "kartik-v/bootstrap-star-rating": "@dev"
+        "laravelcollective/html": "^5.2.0"
     },
     "require-dev": {
 
@@ -56,4 +59,3 @@
         "optimize-autoloader": true
     }
 }
-

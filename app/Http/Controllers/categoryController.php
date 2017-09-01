@@ -14,7 +14,7 @@ class categoryController extends Controller
 
         $categories = Category::all();
 
-        return view('welcome',['categories' => $categories]);
+        return view('welcome')->with('categories',$categories);
 
     }
 

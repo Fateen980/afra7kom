@@ -830,6 +830,19 @@ new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
     el: '#root'
 });
 
+$('.showImg').click(function (e) {
+
+    var img = $(this).find('img').attr('src');
+    e.preventDefault();
+
+    $('#model').addClass('is-active');
+    $('#model img').attr('src', img);
+});
+
+$('.modal-close').click(function () {
+    $('#model').removeClass('is-active');
+});
+
 /***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {

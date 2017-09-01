@@ -52,7 +52,7 @@
 </div>
 </div>
 
-@if ( empty($loadJs))
+@if (! empty($loadJs))
 
 <script>
     function initMap() {
@@ -89,7 +89,8 @@
     <script src="https://cdn.jsdelivr.net/instantsearch-googlemaps/1/instantsearch-googlemaps.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     {{--<script src="{{asset('js/all/all.js')}}"></script>--}}
-    <script src="{{asset('js/all/vue.js')}}"></script>
+    {{--<script src="{{asset('js/all/vue.js')}}"></script>--}}
+
     <script src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
     <script src="{{asset('js/searchVue.js')}}"></script>
 

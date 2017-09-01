@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use App\Mail\welcome;
 use App\User;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -72,6 +73,11 @@ class RegisterController extends Controller
         $data['password'] = bcrypt($data['password']);
         $user = User::create($data);
         $user->userDetail()->create($data);
+
+        auth()->login($user);
+
+        Mail::to($user)->send(new welcome($user));
+
         return $user;
 
     }

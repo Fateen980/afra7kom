@@ -33,8 +33,17 @@
                                         <div class="column is-10 is-offset-1">
                                             <a href="/hotels" class="button is-success is-default mb-1-mobile w-100-mobile">Search More</a>
                                             <button class="button is-naked p-0">
-                                                <a href="/join" title="Download Video">
-                                                    <span data-toggles="is-active" class="button for-like is-outlined is-primary is-toggle "><span class="icon-like"></span> <span>Reserve Now</span></span></button>
+
+                                                @if (Auth::guest())
+                                                    <a href="/join" title="Download Video">
+                                                @else
+                                                    <a href="/payment" title="Download Video">
+
+                                                @endif
+
+                                                    <span data-toggles="is-active" class="button for-like is-outlined is-primary is-toggle ">
+                                                        <span class="icon-like"></span>
+                                                        <span>Reserve Now</span></span></button>
                                             </a>
                                         </div>
 
@@ -49,11 +58,13 @@
 
                             </p>
                         </article>
-                        <article class="tile is-child box">
-                            <p class="title">{{$detail->nameEng}}</p>
+                        <div class="content">
+                            <h1>{{$detail->nameEng}}</h1>
+                            <p>{{$detail->nameEng}}</p>
                             <p></p>
-                            <p class="subtitle">{{$detail->desc}}</p>
-                        </article>
+                            <p>{{$detail->desc}}</p>
+
+                        </div>
                     </div>
 
                     <article class="message is-primary">
@@ -70,6 +81,47 @@
 
 
     </div>
+
+
+<div class="section">
+
+
+    <div class="container">
+
+        <div class="columns">
+
+            <div class="columns columns  is-multiline">
+
+
+                @for ($i = 1; $i <= 10; $i++)
+
+                    <div class="column is-2-tablet has-text-centered  wow fadeInLeftBig" style="visibility: visible; animation-name: fadeInLeftBig;">
+                        <article class="media">
+
+                                <figure class="image is-256x256">
+                                    <a href="" class="showImg">
+                                <img src="{{asset('img/hotels/sub/'.$i.'.jpg')}}" class="img">
+                                   </a>
+                                </figure>
+
+                        </article>
+                    </div>
+
+                @endfor
+
+            </div>
+
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
 
 
 <div class="section">
@@ -188,6 +240,14 @@
     </div>
 
 
-
+<div class="modal" id="model">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <p class="image is-4by3">
+            <img src="" alt="">
+        </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close" ></button>
+</div>
 
 

@@ -3,9 +3,9 @@
 @section('content')
 
 
-
     @include('layout.nav.nav')
-    @include('payment.detail')
+    @include('cart.cart')
+
 
 
 @endsection

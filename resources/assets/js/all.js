@@ -37,3 +37,14 @@ new Vue({
   el:'#root'
 });
 
+$('.showImg').click(function(e){
+
+    var img = $(this).find('img').attr('src');
+    e.preventDefault();
+
+    $('#model').addClass('is-active');
+    $('#model img').attr('src',img);
+
+});
+
+$('.modal-close').click(function(){ $('#model').removeClass('is-active');});
