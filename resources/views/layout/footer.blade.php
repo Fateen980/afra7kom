@@ -52,7 +52,7 @@
 </div>
 </div>
 
-@if (! empty($loadJs))
+@if ( empty($loadJs))
 
 <script>
     function initMap() {

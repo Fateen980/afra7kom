@@ -12,5 +12,7 @@ let mix = require('laravel-mix');
  */
 
 
-mix.js('resources/assets/js/all.js', 'public/js/all')
+mix.js(['resources/assets/js/all.js' ,
+        'resources/assets/js/searchTemplate.js'
+    ], 'public/js/all')
    .sass('resources/assets/sass/app.scss', 'public/css');

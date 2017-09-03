@@ -182,6 +182,7 @@ return [
         App\Providers\PaginationServiceProvider::class,
         Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
+        PragmaRX\Countries\ServiceProvider::class,
         
 
     ],
@@ -235,6 +236,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,
+        'Countries'=> PragmaRX\Countries\Facade::class,
 
     ],
 

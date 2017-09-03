@@ -1,6 +1,6 @@
 
-
-<ol>
-    <!-- Create an instance of the todo-item component -->
-    <scan-view></scan-view>
-</ol>
+<div class="section">
+        <div class="filterable container">
+            <scan-view query="{{ $query }}"></scan-view>
+        </div>
+</div>

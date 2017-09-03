@@ -77,9 +77,45 @@ $factory->define(App\lobby::class, function ($faker) use ($factory)  {
     return [
         'hotel_id' => $factory->create(App\hotel::class)->id,
 
+        'name'         => $faker->name,
+        'country'      => $faker->numberBetween(1,500),
+        'city'         => $faker->numberBetween(1,500),
+        'address'      => $faker->streetAddress,
+        'latitude'     => $faker->latitude,
+        'longitude'    => $faker->longitude,
+        'description'  => $faker->paragraph,
+        'price'   => $faker->randomFloat(3, 800,3000), // 48.8932,
+        'from'    => 11,
+        'to'    =>   3,
+        'snacks'    => $faker->numberBetween(0,1),
+        'dinner'    => $faker->numberBetween(0,1),
+        'guests'    => 150,
+        'guest_price'    => $faker->numberBetween(20,100),
+        'rating'       => $faker->numberBetween(1,5),
+        'userRating'   => $faker->numberBetween(1,5),
+        'img'   => 'img/lobby/lobbies/15.jpg',
+        'path'   => '/lobby/',
+        'phone' => $faker->e164PhoneNumber,
 
-        'name'    => $faker->name,
-        'price'    => $faker->numberBetween($min = 0, $max = 12000),
+    ];
+});
+
+
+$factory->define(App\lobbyDetails::class, function ($faker) use ($factory)  {
+
+    return [
+        'lobby_id' => $factory->create(App\lobby::class)->id,
+
+        'price'   => $faker->randomFloat(3, 800,3000), // 48.8932,
+        'from'    => 9,
+        'to'    =>   12,
+        'snacks'    => '1',
+        'dinner'    => '0',
+        'guests'    => 330,
+        'guest_price'    => $faker->numberBetween(20,100),
+        'rating'       => $faker->numberBetween(0,5),
+        'userRating'   => $faker->numberBetween(0,5),
+        'img'   => 'lobby15.jpg'
 
     ];
 });

@@ -15,7 +15,8 @@ class searchController extends Controller
 
     public function show($query){
 
-        return view('hotels.search.index',['query' => compact('query'),'loadJs' => 1]);
+
+        return view('hotels.search.index',compact('query'))->with('loadJs',1);
 
     }
 

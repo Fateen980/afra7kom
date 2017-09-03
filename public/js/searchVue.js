@@ -1,4 +1,25 @@
 
+function getHeader(name){
+
+return '<h4 class="filterable-heading has-icon mt-0">'+
+        '<span class="icon"><img src="/img/lesson-type.svg" alt="Skill Type Icon"></span>'+
+          name;
+}
+
+function createAlgoliaClient(appId,apiKey,index){
+
+    return  instantsearch({
+                        // Replace with your own values
+                        appId: appId,
+                        apiKey: apiKey, // search only API key, no ADMIN key
+                        indexName:index,
+                        urlSync: true
+            });
+
+}
+
+
+
 
 
 
@@ -39,25 +60,8 @@ var hitTemplate =
     '</div>';
 
 
-var filterHeaderCountry =
-    '<h4 class="filterable-heading has-icon mt-0">'+
-    '<span class="icon"><img src="/img/lesson-type.svg" alt="Skill Type Icon"></span>'+
-    'Country';
 
 
-
-
-
-var filterHeaderCity =
-    '<h4 class="filterable-heading has-icon mt-0">'+
-    '<span class="icon"><img src="/img/lesson-type.svg" alt="Skill Type Icon"></span>'+
-    'City';
-
-
-var rangSliderHeader =
-    '<h4 class="filterable-heading has-icon mt-0">'+
-    '<span class="icon"><img src="/img/lesson-type.svg" alt="Skill Type Icon"></span>'+
-    'Price';
 
 var facetTemplateCheckbox = '<div class="ais-refinement-list__item">'+
     '<label><input type="checkbox" value="{{name}}"  {{#isRefined}}checked{{/isRefined}}>'+
@@ -73,28 +77,8 @@ var lobbyTemplateCheckbox = '<div class="ais-refinement-list__item">'+
     '</div>';
 
 
-var ratingHeader =
-    '<h4 class="filterable-heading has-icon mt-0">'+
-    '<span class="icon"><img src="/img/lesson-type.svg" alt="Skill Type Icon"></span>'+
-    'Rating';
 
-var lobbyHeader =
-    '<h4 class="filterable-heading has-icon mt-0">'+
-    '<span class="icon"><img src="/img/lesson-type.svg" alt="Skill Type Icon"></span>'+
-    'Option';
-
-var client = algoliasearch("JRQNI5N6DC", "5b7701e3b9982706450dc0dd59d07261");
-var index  = client.initIndex("hotels");
-
-
-
-var hotel =  instantsearch({
-    // Replace with your own values
-    appId: 'JRQNI5N6DC',
-    apiKey: '5b7701e3b9982706450dc0dd59d07261', // search only API key, no ADMIN key
-    indexName: 'hotels',
-    urlSync: true
-});
+var hotel =  createAlgoliaClient('JRQNI5N6DC','5b7701e3b9982706450dc0dd59d07261','hotels');
 
 
 
@@ -122,7 +106,7 @@ var rangeSlider = instantsearch.widgets.rangeSlider({
     attributeName: 'city',
     pips         : false,
     templates: {
-        header: rangSliderHeader
+        header: getHeader('Price')
     },
     tooltips: {
         format: function (rawValue) {
@@ -164,7 +148,7 @@ var ratingWidget = instantsearch.widgets.starRating({
     container: '#ratingItem',
     attributeName: 'rateSatr',
     templates: {
-        header: ratingHeader
+        header: getHeader('Rating')
     },
     labels: {
         andUp: ''
@@ -183,7 +167,7 @@ var Widget2 = instantsearch.widgets.refinementList({
     templates: {
 
         item  : facetTemplateCheckbox,
-        header: filterHeaderCountry
+        header: getHeader('Country')
     }
 });
 
@@ -205,7 +189,7 @@ var Widget3 = instantsearch.widgets.refinementList({
     sortBy:["name:asc"],
     templates: {
         item: facetTemplateCheckbox,
-        header: filterHeaderCity
+        header: getHeader('City')
     }
 });
 
@@ -253,7 +237,7 @@ var listlobby =
         },
         templates: {
             item: lobbyTemplateCheckbox,
-            header: lobbyHeader
+            header: getHeader('Options')
         }
     });
 
@@ -401,17 +385,7 @@ hotel.addWidget(listac);
 
 // This Section for Hotel Details
 
-var hotelDetail =  instantsearch({
-    // Replace with your own values
-    appId: 'JRQNI5N6DC',
-    apiKey: '5b7701e3b9982706450dc0dd59d07261', // search only API key, no ADMIN key
-    indexName: 'hotel_details',
-    urlSync: true
-
-});
-
-
-
+var hotelDetail =  createAlgoliaClient('JRQNI5N6DC','5b7701e3b9982706450dc0dd59d07261','hotel_details');
 
 
 // var toggleList = instantsearch.widgets.toggle({

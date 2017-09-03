@@ -13,19 +13,25 @@
 
 use App\hotel as Hotel;
 
+//Categories
+
 Route::get('/','categoryController@index');
-Route::get('/home/page', ['as' => 'back', 'uses' => 'categoryController@index' ]);
 Route::get('/hotels','hotelController@index')->name('hotels');
+Route::get('/lobby','lobbyController@index');
+Route::get('/lobbyName','lobbyController@getLobbiesName')->name('lobbyName');
+
+// Sub Categories
+
+Route::get('/hotels/search','hotelController@searchSuggestion');
+Route::get('/hotels/detail/{id?}','hotelDetailController@index');
+Route::get('/hotels/detail/{id?}','hotelDetailController@index');
+
+
+
+Route::get('/home/page', ['as' => 'back', 'uses' => 'categoryController@index' ]);
 Route::get('/search','searchController@index');
 
 
-Route::get('/test','contactController@index');
-Route::get('/hotels/search','hotelController@searchSuggestion');
-Route::get('/hotels/detail/{id?}','hotelDetailController@index');
-
-Route::get('/hotels/detail/{id?}','hotelDetailController@index');
-
-Route::get('/payment','paymentController@index');
 
 //API
 Route::get('/category','categoryController@show');
