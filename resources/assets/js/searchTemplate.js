@@ -11,6 +11,7 @@ Vue.use('axios');
 Vue.component('scan-view',searchView);
 
 
+
 new Vue({
         el: '#root'
 });
