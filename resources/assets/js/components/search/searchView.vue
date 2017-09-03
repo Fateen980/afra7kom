@@ -92,7 +92,7 @@
                                     <span v-if="n <= props.value" class="ais-star-rating--star"></span>
                                     <span v-else class="ais-star-rating--star__empty"></span>
                                 </label>
-                                
+
                             </template>
                             &nbsp;&amp; <span class="ais-refinement-list__count" v-text="props.count"></span>
 
