@@ -53,6 +53,32 @@
 
 <div class="section">
 
+
+    <div class="container">
+
+        <div class="columns">
+
+            <div class="columns columns  is-multiline">
+
+@for ($i = 1; $i <= 10; $i++)
+
+    <div class="column is-2-tablet has-text-centered  wow fadeInLeftBig" style="visibility: visible; animation-name: fadeInLeftBig;">
+        <article class="media">
+
+            <figure class="image is-256x256">
+                <a href="" class="showImg">
+                    <img src="{{asset('img/lobby/lobbies/'.$i.'.jpg')}}" class="img">
+                </a>
+            </figure>
+
+        </article>
+    </div>
+
+@endfor
+            </div></div></div></div>
+
+<div class="section">
+
     <div class="container">
 
         <div class="columns">
@@ -75,6 +101,19 @@
 
 
 <schedule id="{{$detail->id}}"></schedule>
+
+
+
+
+<div class="modal" id="model">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <p class="image is-4by3">
+            <img src="" alt="">
+        </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close" ></button>
+</div>
 
 
 
