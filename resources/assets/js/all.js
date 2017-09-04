@@ -3,8 +3,21 @@ import Vue from 'vue'
 import VeeValidate from 'vee-validate';
 import validateForm from './components/validate.vue'
 import VueAxios from 'vue-axios'
+import Rating from 'vue-bulma-rating'
+import InstantSearch from 'vue-instantsearch';
+import searchView from './components/search/searchView.vue'
+
+import schedule from './components/lobby/schedule.vue'
+
+
 
 Vue.use('VueAxios','axios');
+
+Vue.use(InstantSearch);
+Vue.use('axios');
+Vue.component('scan-view',searchView);
+
+
 
 const config = {
     errorBagName: 'errors', // change if property conflicts.
@@ -30,11 +43,21 @@ const config = {
 
 Vue.use(VeeValidate, config);
 Vue.component('validate', validateForm);
+Vue.component('Rating', Rating);
+Vue.component('schedule', schedule);
 
 
 new Vue({
 
-  el:'#root'
+  el:'#root',
+
+    data:{
+
+        dates:{ 'date':1,
+                'love':2}
+       }
+
+
 });
 
 $('.showImg').click(function(e){

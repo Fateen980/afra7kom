@@ -4,14 +4,14 @@
         <nav class="level">
             <ul class="level-left breadcrumb">
                 <li class="level-item">
-                    <a href="{{route('hotels')}}">
-                        Hotels
+                    <a href="{{route($route)}}">
+                        {{ $title }}
                     </a>
                 </li>
 
                 <li>
 
-                        {{$detail->nameEng}}
+                        {{$name}}
 
 
                 </li>

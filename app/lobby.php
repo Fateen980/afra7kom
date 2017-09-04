@@ -9,4 +9,15 @@ class lobby extends Model
 
     use Searchable;
 
+
+
+
+    public function LobbyTime(){
+
+        return $this->hasMany('App\lobbyTime');
+
+    }
+
+
+
 }
