@@ -103,13 +103,13 @@
 
                                 <span v-if=" ! dates.booked[index]">
 
-                                    <form method="post" action="">
+
                                         <div class="control">
                                             <button type="submit" class="button is-success is-outlined ">
                                             Book Now !
                                             </button></div>
 
-                                    </form>
+                                
                                 </span>
 
                                     <span v-else>
