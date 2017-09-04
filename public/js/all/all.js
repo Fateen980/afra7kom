@@ -42318,19 +42318,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "running-time"
   }, [_vm._v("Time To")])])]), _vm._v(" "), _c('th')])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('form', {
-    attrs: {
-      "method": "post",
-      "action": ""
-    }
-  }, [_c('div', {
+  return _c('div', {
     staticClass: "control"
   }, [_c('button', {
     staticClass: "button is-success is-outlined ",
     attrs: {
       "type": "submit"
     }
-  }, [_vm._v("\n                                        Book Now !\n                                        ")])])])
+  }, [_vm._v("\n                                        Book Now !\n                                        ")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

@@ -109,7 +109,7 @@
                                             Book Now !
                                             </button></div>
 
-                                
+
                                 </span>
 
                                     <span v-else>
