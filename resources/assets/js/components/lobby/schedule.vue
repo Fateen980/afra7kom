@@ -127,8 +127,10 @@
                             </tbody>
                         </table>
 
+                        <div class="centered-heading">
+                        <pulse-loader :loading="loading" :color="color" :size="size"></pulse-loader>
 
-
+                        </div>
                     </div>
 
                 </div>
@@ -149,7 +151,17 @@
 
 <script>
 
+    import PulseLoader  from 'vue-spinner/src/PulseLoader.vue'
+    import RingLoader   from 'vue-spinner/src/RingLoader.vue'
+
+
     export default {
+
+
+        components: {
+            'PulseLoader': PulseLoader,
+            'RingLoader' : RingLoader
+        },
 
         props: {
 
@@ -159,6 +171,7 @@
 
             return {
 
+                loading :false,
 
                 dates:{}
 
@@ -171,35 +184,48 @@
 
                         thisDay(){
 
+                            this.dates = {};
+                            this.loading  = true;
                             axios.get('/thisDay/' + this.id)
                             .then(response => {
                             this.dates =  response.data;
+                                this.loading  = false;
                             });
 
                         },
 
                        thisWeek(){
 
+                                this.dates = {};
+                                this.loading  = true;
                              axios.get('/thisWeek/' + this.id)
                                  .then(response => {
                                      this.dates =  response.data;
+                                     this.loading  = false;
                                  });
 
                          },
 
                         thisMonth(){
 
+                            this.dates = {};
+                            this.loading  = true;
                             axios.get('/thisMonth/'+this.id)
                                 .then(response => {
                                     this.dates =  response.data;
+                                    this.loading  = false;
                                 });
                         },
 
                                 thisYear(){
 
+                                    this.dates = {};
+                                    this.loading  = true;
+
                                     axios.get('/thisYear/' + this.id)
                                         .then(response => {
                                             this.dates =  response.data;
+                                            this.loading  = false;
                                         });
 
                                 },

@@ -8,6 +8,7 @@ import InstantSearch from 'vue-instantsearch';
 import searchView from './components/search/searchView.vue'
 
 import schedule from './components/lobby/schedule.vue'
+import PulseLoader  from 'vue-spinner/src/PulseLoader.vue'
 
 
 
@@ -16,6 +17,7 @@ Vue.use('VueAxios','axios');
 Vue.use(InstantSearch);
 Vue.use('axios');
 Vue.component('scan-view',searchView);
+
 
 
 
@@ -55,7 +57,10 @@ new Vue({
 
         dates:{ 'date':1,
                 'love':2}
-       }
+       },
+    components: {
+        PulseLoader
+    }
 
 
 });
