@@ -17,8 +17,8 @@ class CreateLobbyDetailTable extends Migration
 
             $table->increments('id');
             $table->double('price', 15, 8);
-            $table->integer('from');
-            $table->integer('to');
+            $table->string('from');
+            $table->string('to');
             $table->integer('snacks');
             $table->integer('dinner');
             $table->integer('guests');

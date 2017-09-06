@@ -42769,7 +42769,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "latest"
   }, [_c('h2', {
     staticClass: "title is-4"
-  }, [_vm._v("\n                    " + _vm._s(_vm.filterBy) + "\n                ")]), _vm._v(" "), _vm._l((_vm.data), function(lobbies, lobbyId) {
+  }, [_vm._v("\n              " + _vm._s(_vm.filterBy) + "\n          ")]), _vm._v(" "), _vm._l((_vm.data), function(lobbies, lobbyId) {
     return _c('div', _vm._l((lobbies), function(lobby, date) {
       return _c('ul', {
         staticClass: "lesson-list "
@@ -42821,39 +42821,39 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "lesson-list-details flex pr-3-tablet pr-2-mobile"
       }, [_c('h5', {
         staticClass: "lesson-list-title title mr-2-tablet mbb-1"
-      }, [_vm._v("\n                                " + _vm._s(lobby.data.name) + "\n                            ")]), _vm._v(" "), _c('div', {
+      }, [_vm._v("\n                          " + _vm._s(lobby.data.name) + "\n                      ")]), _vm._v(" "), _c('div', {
         staticClass: "columns ",
         staticStyle: {
           "color": "rgb(136, 173, 72)"
         }
       }, [_c('div', {
         staticClass: "column is-bold"
-      }, [_vm._v("\n                                        " + _vm._s(lobby.data.guests) + " Guests\n                                    ")]), _vm._v(" "), (lobby.data.guests) ? _c('div', {
+      }, [_vm._v("\n                                  " + _vm._s(lobby.data.guests) + " Guests\n                              ")]), _vm._v(" "), (lobby.data.guests) ? _c('div', {
         staticClass: "column is-bold"
-      }, [_vm._v("\n                                        Snacks\n                                    ")]) : _c('div', {
+      }, [_vm._v("\n                                  Snacks\n                              ")]) : _c('div', {
         staticClass: "column is-bold"
-      }, [_vm._v("\n                                        No Snacks\n                                    ")]), _vm._v(" "), (lobby.data.dinner) ? _c('div', {
+      }, [_vm._v("\n                                  No Snacks\n                              ")]), _vm._v(" "), (lobby.data.dinner) ? _c('div', {
         staticClass: "column is-bold"
-      }, [_vm._v("\n                                        Dinner\n                                    ")]) : _c('div', {
+      }, [_vm._v("\n                                  Dinner\n                              ")]) : _c('div', {
         staticClass: "column is-bold"
-      }, [_vm._v("\n                                        No Dinner\n                                    ")]), _vm._v(" "), _c('div', {
+      }, [_vm._v("\n                                  No Dinner\n                              ")]), _vm._v(" "), _c('div', {
         staticClass: "column"
       })]), _vm._v(" "), _c('p', {
         staticClass: "lesson-list-subtitle"
       }), (lobby.booked) ? _c('h3', {
         staticClass: "heading"
-      }, [_vm._v("\n                                " + _vm._s(lobby.data.price) + "  JD "), _c('strong', {
+      }, [_vm._v("\n                          " + _vm._s(lobby.data.price) + "  JD "), _c('strong', {
         staticClass: "color-success"
       }, [_vm._v("Not Available")])]) : _c('h3', {
         staticClass: "heading"
-      }, [_vm._v("\n                                " + _vm._s(date) + " "), _c('strong', {
+      }, [_vm._v("\n                          " + _vm._s(date) + " "), _c('strong', {
         staticClass: "color-success"
       }, [_vm._v("Available")])]), _vm._v(" "), _c('p'), _vm._v(" "), _c('p', {
         staticClass: "  is-bold  ",
         staticStyle: {
           "color": "rgb(187, 130, 78)"
         }
-      }, [_vm._v("\n\n                                " + _vm._s(date) + " " + _vm._s(lobby.names) + "\n                                "), _c('span', {
+      }, [_vm._v("\n\n                          " + _vm._s(date) + " " + _vm._s(lobby.names) + "\n                          "), _c('span', {
         staticClass: "is-hidden-tablet-only"
       }, [_c('span', {
         staticClass: "is-hidden-mobile",
