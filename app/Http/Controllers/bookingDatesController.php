@@ -64,6 +64,9 @@ class bookingDatesController extends Controller
 
     public function  diffDays($id, $flag = 1){
 
+
+        $dates = array();
+
         $current  =  Carbon::yesterday();
 
         $bookings = $this->bookingDates($id);
