@@ -11,7 +11,6 @@
 |
 */
 
-use App\hotel as Hotel;
 
 //Categories
 
@@ -43,11 +42,12 @@ Route::get('/thisDay/{id?}','bookingDatesController@thisDay');
 
 //API
 Route::get('/category','categoryController@show');
-Route::get('/gethotels',function (){
+Route::get('/gethotels',function (){ return App\hotel::all();});
+Route::get('/getlobbies',function (){ return App\lobby::all();});
 
-   return Hotel::all();
 
-});
+
+
 
 
 
