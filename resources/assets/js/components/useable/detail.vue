@@ -85,7 +85,7 @@
 
 
 
-</div>
+                    </div>
 
                         <span v-for="n in lobby.data.rating"  class="ais-star-rating--star"></span>
 
