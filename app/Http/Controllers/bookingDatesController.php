@@ -17,9 +17,14 @@ class bookingDatesController extends Controller
 
     public function bookingDates($id){
 
-        $booking = new Booking;
-        $bookings  = $booking->where('sub_id' ,$id)->pluck('from');
+        $booking   = new Booking;
+        $bookings  = $booking
 
+        ->Join('categories', 'bookings.category_id', '=', 'categories.id')
+        ->Join('lobbies', 'bookings.lobby_id', '=', 'lobbies.id')
+        ->Join('lobby_details', 'lobby_details.lobby_id', '=', 'lobbies.id')
+
+        ->paginate(15);
 
         return  $bookings;
 
@@ -28,22 +33,23 @@ class bookingDatesController extends Controller
 
     public function thisDay($id){
 
-        return $trialExpires = $this->diffDays($id , 4);
+        return  $this->diffDays($id , 4);
 
     }
 
 
 
+
     public function thisWeek($id){
 
-        return $trialExpires = $this->diffDays($id , 2);
+        return $this->diffDays($id , 2);
 
     }
 
 
     public function thisMonth($id){
 
-        return $trialExpires = $this->diffDays($id , 1);
+        return  $this->diffDays($id , 1);
 
     }
 
@@ -51,7 +57,7 @@ class bookingDatesController extends Controller
 
     public function thisYear($id){
 
-        return $trialExpires = $this->diffDays($id ,3);
+        return $this->diffDays($id ,3);
 
     }
 
@@ -60,7 +66,7 @@ class bookingDatesController extends Controller
 
         $current  =  Carbon::yesterday();
 
-        $bookings = $this->bookingDates($id)->toArray();
+        $bookings = $this->bookingDates($id);
 
             if($flag == 1)
 
@@ -78,15 +84,23 @@ class bookingDatesController extends Controller
 
                 $trialExpires =  $current->diffInDays($current->copy()->addDay());
 
+
         for($i = 1; $i <= $trialExpires; $i++){
 
 
-            $date = $dates['dates'][$i] = $current->addDay()->toDateString();
+            $date = $current->addDay()->toDateString();
 
-            if(in_array($date,$bookings))
-                $dates['booked'][$i] = true;
-            else
-                $dates['booked'][$i] = false;
+            foreach($bookings as $booking){
+
+                $dates[$booking->id] [$date] ['booked'] = $this->isBookDate($date , $booking->booking_date);
+                $dates[$booking->id] [$date] ['data']   = $booking;
+                $dates[$booking->id] [$date] ['names']  = $current->format( 'l' );
+
+            }
+
+
+
+
 
         }
 
@@ -95,6 +109,29 @@ class bookingDatesController extends Controller
     }
 
 
+
+    public function isBookDate($firstDate,$secondDate){
+
+
+               if($firstDate == $secondDate) return true;
+
+                return false;
+    }
+
+
+        public function lobbiesData($bookings){
+
+
+                $filledArray = array();
+
+                foreach($bookings as $booking) {
+
+                    $filledArray[] = $booking;
+
+                }
+
+                return $filledArray;
+        }
 
 
 

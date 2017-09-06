@@ -16,13 +16,14 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id')->unsigned();
-            $table->integer('sub_id');
-            $table->date('from');
-            $table->date('to');
-
-            $table->timestamps();
+            $table->integer('lobby_id')->unsigned();
+            $table->integer('lobby_sub_id')->unsigned();
+            $table->date('booking_date');
 
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('lobby_id')->references('id')->on('lobbies');
+            $table->foreign('lobby_sub_id')->references('id')->on('lobby_details');
+            $table->timestamps();
 
         });
     }

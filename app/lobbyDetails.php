@@ -8,4 +8,12 @@ use Laravel\Scout\Searchable;
 class lobbyDetails extends Model
 {
     use Searchable;
+
+
+    public function booking(){
+
+        $this->hasMany('App\booking');
+    }
+
+
 }

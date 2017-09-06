@@ -4,10 +4,12 @@
 
     @include('layout.nav.nav')
     @include('layout.nav.breadcrumb',[
-
-            'route' => 'lobby',
-            'title' => 'Lobby',
-            'name'  => @isset($detail) ? $detail->name : ''
+            'routes'  =>
+                    [
+                        0 => ['url'   =>  'categoryController@index','title' => 'Home' ],
+                        1 => ['url'   =>  'lobbyController@index','title' => 'Lobby' ]
+                    ] ,
+                    'name'  => @isset($detail) ? $detail->name : ''
     ])
     @include('lobby.detail.content')
 

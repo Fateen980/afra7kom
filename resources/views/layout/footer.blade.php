@@ -80,7 +80,10 @@
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @if( ! empty($loadJs))
+
+    <script src="{{asset('js/lib/pikaday.js')}}"></script>
     <script src="{{asset('js/all/all.js')}}"></script>
+
 @endif
 
 @if( empty($loadJs))

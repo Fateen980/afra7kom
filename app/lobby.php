@@ -10,7 +10,10 @@ class lobby extends Model
     use Searchable;
 
 
+    public function booking(){
 
+        $this->hasMany('App\booking');
+    }
 
     public function LobbyTime(){
 

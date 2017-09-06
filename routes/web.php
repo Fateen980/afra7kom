@@ -18,6 +18,7 @@ Route::get('/','categoryController@index');
 Route::get('/hotels','hotelController@index')->name('hotels');
 Route::get('/lobby','lobbyController@index')->name('lobby');
 Route::get('/lobby/{id?}','lobbyController@show');
+Route::get('/lobby/schedule/{id?}','lobbyScheduleController@index');
 Route::get('/lobbyName','lobbyController@getLobbiesName')->name('lobbyName');
 
 // Sub Categories

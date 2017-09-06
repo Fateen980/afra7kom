@@ -25,7 +25,9 @@
 
                 </p>
                 <p><strong>{{$detail->name}}</strong></p>
-                <Rating :items.type="5" ></Rating>
+                <a href="/lobby/schedule/{{ $detail->id }}" class="button is-default is-primary w-100 mb-1">
+                    Check Scheduale
+                </a>
 
                 <blockquote><p>{{$detail->description}}</p></blockquote>
 
@@ -76,33 +78,6 @@
 
 @endfor
             </div></div></div></div>
-
-<div class="section">
-
-    <div class="container">
-
-        <div class="columns">
-
-            <div class="column">
-
-                <div class="centered-heading">
-                    <h3 class="heading">
-                        Lobby <strong class="color-success">Schedule</strong> Dates
-                    </h3>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<schedule id="{{$detail->id}}"></schedule>
-
-
 
 
 
