@@ -1,10 +1,7 @@
-<template>
+<template >
 
 <div class="wrapper">
-
     <div class="section">
-
-
         <div class="container filterable">
 
 
@@ -25,17 +22,17 @@
                             Choose a Filter
                         </p>
 
-                        <ul class="menu-list">
+                        <ul  class="menu-list" >
 
                             <li>
 
                                 <a href="/" @click.prevent="" class=" has-icon">
                                 <span class="is-circle icon" style="color: rgb(136, 173, 72);"></span>
-                                <input type="text" id="start" class="input" placeholder="Date From">
+                                <input type="text"    id="start" class="input" placeholder="Date From" readonly >
                                 </a></li>
                             <li><a href="/" @click.prevent="" class=" has-icon">
                                 <span class="is-circle icon" style="color: rgb(249, 169, 122);"></span>
-                                <input type="text" id="end" class="input" placeholder="Date To"></a></li>
+                                <input type="text"   id="end" class="input" placeholder="Date To" readonly></a></li>
 
                             <li><a href="/" @click.prevent="thisDay" class=" has-icon">
                                 <span class="is-circle icon" style="color: rgb(136, 173, 72);"></span>
@@ -53,15 +50,9 @@
                             <li><a href="/" @click.prevent="thisWeek" class=" has-icon">
                                 <span class="is-circle icon" style="color: rgb(136, 173, 72);"></span>
                             This Week
-                        </a></li> <li><a href="/" class=" has-icon">
-                            <span class="is-circle icon" style="color: rgb(249, 169, 122);"></span>                            This Day
-                        </a></li> <li><a href="/" class=" has-icon">
-                            <span class="is-circle icon" style="color: rgb(154, 212, 224);"></span>                           Popular All Time
-                        </a></li> <li><a href="/" class=" has-icon">
-                            <span class="is-circle icon" style="color: rgb(249, 169, 122);"></span>                            Booked
-                        </a></li> <li><a href="/" class=" has-icon">
-                            <span class="is-circle icon" style="color: rgb(154, 212, 224);"></span>                           UnBooked
-                        </a></li> </ul>
+                        </a></li>
+
+                        </ul>
 
 
                      </div>
@@ -92,11 +83,9 @@
 
 
             </div>
-
         </div>
-
     </div>
-</div>
+
 </template>
 
 
@@ -121,10 +110,10 @@
 
            id:''
         },
+
         data() {
 
             return {
-
                 loading     : false,
                 filterBy    : '',
                 lobbiesData : {}
@@ -132,81 +121,82 @@
             };
         },
 
-        computed: { },
+        computed:{
 
+
+        },
         methods: {
 
-                        thisDay(){
 
-                            cache: false;
-                            this.lobbiesData = {};
-                            this.loading  = true;
-                            this.filterBy = 'Filter By : Today'
-
-                            axios.get('/thisDay/' + this.id)
-                            .then(response => {
-                            this.lobbiesData =  response.data;
-                                this.loading  = false;
-
-                            });
-
-                        },
-
-                       thisWeek(){
-
-                                cache: false;
-                                this.lobbiesData = {};
-                                this.loading  = true;
-                                this.filterBy = 'Filter By : Week'
-
-                             axios.get('/thisWeek/' + this.id)
-                                 .then(response => {
-                                     this.lobbiesData =  response.data;
-                                     this.loading  = false;
-
-                                 });
-
-                         },
-
-                        thisMonth(){
-
-                            cache: false;
-                            this.lobbiesData = {};
-                            this.loading  = true;
-                            this.filterBy = 'Filter By : Month'
-
-                            axios.get('/thisMonth/'+this.id)
-                                .then(response => {
-                                    this.lobbiesData =  response.data;
-                                    this.loading  = false;
-
-                                });
-                        },
-
-                                thisYear(){
-
-                                    cache: false;
-                                    this.lobbiesData = {};
-                                    this.loading  = true;
-                                    this.filterBy = 'Filter By : Year'
-
-                                    axios.get('/thisYear/' + this.id)
-                                        .then(response => {
-                                            this.lobbiesData =  response.data;
-                                            this.loading  = false;
-
-                                        });
-
-                                },
-
-                        resetFilters(){
-
-                            this.lobbiesData = {}
-                            this.filterBy = ''
-
-                        }
+            thisDay(){
 
 
+                cache: false;
+                this.lobbiesData = {};
+                this.loading  = true;
+                this.filterBy = 'Filter By : Today'
+
+                axios.get('/thisDay/' + this.id)
+                .then(response => {
+                this.lobbiesData =  response.data;
+                    this.loading  = false;
+
+                });
+
+            },
+           thisWeek(){
+
+                    cache: false;
+                    this.lobbiesData = {};
+                    this.loading  = true;
+                    this.filterBy = 'Filter By : Week'
+
+                 axios.get('/thisWeek/' + this.id)
+                     .then(response => {
+                         this.lobbiesData =  response.data;
+                         this.loading  = false;
+
+                     });
+
+             },
+
+            thisMonth(){
+
+                cache: false;
+                this.lobbiesData = {};
+                this.loading  = true;
+                this.filterBy = 'Filter By : Month'
+
+                axios.get('/thisMonth/'+this.id)
+                    .then(response => {
+                        this.lobbiesData =  response.data;
+                        this.loading  = false;
+
+                    });
+            },
+
+            thisYear(){
+
+                cache: false;
+                this.lobbiesData = {};
+                this.loading  = true;
+                this.filterBy = 'Filter By : Year'
+
+                axios.get('/thisYear/' + this.id)
+                    .then(response => {
+                        this.lobbiesData =  response.data;
+                        this.loading  = false;
+
+                    });
+
+            },
+
+            resetFilters(){
+
+                this.lobbiesData = {}
+                this.filterBy = ''
+
+            }
 
         },
 
@@ -217,4 +207,6 @@
 
 
     }
+
+
 </script>

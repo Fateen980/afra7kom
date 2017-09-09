@@ -10,9 +10,22 @@ class lobby extends Model
     use Searchable;
 
 
+    public function Category(){
+
+        return $this->belongsTo('App\Category','hotel_id','id');
+    }
+
+
+
+    public function lobbyDetails(){
+
+        return $this->hasMany('App\lobbyDetails');
+    }
+
+
     public function booking(){
 
-        $this->hasMany('App\booking');
+        return $this->hasMany('App\booking');
     }
 
     public function LobbyTime(){

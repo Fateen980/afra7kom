@@ -119,3 +119,15 @@ $factory->define(App\lobbyDetails::class, function ($faker) use ($factory)  {
 
     ];
 });
+
+$factory->define(App\lobbyTime::class, function ($faker) use ($factory)  {
+
+    return [
+        'lobby_id' => $factory->create(App\lobby::class)->id,
+
+        'from'   => '07:30:00', // 48.8932,
+        'to'     => '09:30:00'
+
+
+    ];
+});

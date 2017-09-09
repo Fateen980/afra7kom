@@ -10367,12 +10367,9 @@ new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
 
     el: '#root',
 
-    data: {
-
-        dates: { 'date': 1,
-            'love': 2 }
-    },
+    data: {},
     components: {
+
         PulseLoader: __WEBPACK_IMPORTED_MODULE_9_vue_spinner_src_PulseLoader_vue___default.a
     }
 
@@ -10405,6 +10402,7 @@ var startDate,
 },
     startPicker = new Pikaday({
     field: document.getElementById('start'),
+    format: 'DD/MM/YYYY',
     minDate: new Date(),
     maxDate: new Date(2020, 12, 31),
     onSelect: function onSelect() {
@@ -10414,6 +10412,7 @@ var startDate,
 }),
     endPicker = new Pikaday({
     field: document.getElementById('end'),
+    format: 'DD/MM/YYYY',
     minDate: new Date(),
     maxDate: new Date(2020, 12, 31),
     onSelect: function onSelect() {
@@ -42172,17 +42171,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -42202,10 +42190,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         id: ''
     },
+
     data: function data() {
 
         return {
-
             loading: false,
             filterBy: '',
             lobbiesData: {}
@@ -42215,7 +42203,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     computed: {},
-
     methods: {
         thisDay: function thisDay() {
             var _this = this;
@@ -42749,15 +42736,12 @@ module.exports = Component.exports
 //
 //
 //
+//
 
 module.exports = {
-        props: ['data', 'loading', 'filterBy'],
 
-        created: function created() {
+        props: ['data', 'loading', 'filterBy']
 
-                console.log('user data from parent component:');
-                console.log(this.user); //prints out an empty string
-        }
 };
 
 /***/ }),
@@ -42769,8 +42753,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "latest"
   }, [_c('h2', {
     staticClass: "title is-4"
-  }, [_vm._v("\n              " + _vm._s(_vm.filterBy) + "\n          ")]), _vm._v(" "), _vm._l((_vm.data), function(lobbies, lobbyId) {
-    return _c('div', _vm._l((lobbies), function(lobby, date) {
+  }, [_vm._v("\n              " + _vm._s(_vm.filterBy) + "\n          ")]), _vm._v(" "), _vm._l((_vm.data), function(lobbies, date) {
+    return _c('div', _vm._l((lobbies), function(lobby, index) {
       return _c('ul', {
         staticClass: "lesson-list "
       }, [_c('li', {
@@ -42821,18 +42805,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "lesson-list-details flex pr-3-tablet pr-2-mobile"
       }, [_c('h5', {
         staticClass: "lesson-list-title title mr-2-tablet mbb-1"
-      }, [_vm._v("\n                          " + _vm._s(lobby.data.name) + "\n                      ")]), _vm._v(" "), _c('div', {
+      }), _vm._v(" "), _c('div', {
         staticClass: "columns ",
         staticStyle: {
           "color": "rgb(136, 173, 72)"
         }
       }, [_c('div', {
         staticClass: "column is-bold"
-      }, [_vm._v("\n                                  " + _vm._s(lobby.data.guests) + " Guests\n                              ")]), _vm._v(" "), (lobby.data.guests) ? _c('div', {
+      }, [_vm._v("\n                                  " + _vm._s(lobby.guests) + " Guests\n                              ")]), _vm._v(" "), (lobby.guests) ? _c('div', {
         staticClass: "column is-bold"
       }, [_vm._v("\n                                  Snacks\n                              ")]) : _c('div', {
         staticClass: "column is-bold"
-      }, [_vm._v("\n                                  No Snacks\n                              ")]), _vm._v(" "), (lobby.data.dinner) ? _c('div', {
+      }, [_vm._v("\n                                  No Snacks\n                              ")]), _vm._v(" "), (lobby.dinner) ? _c('div', {
         staticClass: "column is-bold"
       }, [_vm._v("\n                                  Dinner\n                              ")]) : _c('div', {
         staticClass: "column is-bold"
@@ -42842,7 +42826,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "lesson-list-subtitle"
       }), (lobby.booked) ? _c('h3', {
         staticClass: "heading"
-      }, [_vm._v("\n                          " + _vm._s(lobby.data.price) + "  JD "), _c('strong', {
+      }, [_vm._v("\n                          " + _vm._s(lobby.price) + "  JD "), _c('strong', {
         staticClass: "color-success"
       }, [_vm._v("Not Available")])]) : _c('h3', {
         staticClass: "heading"
@@ -42853,7 +42837,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticStyle: {
           "color": "rgb(187, 130, 78)"
         }
-      }, [_vm._v("\n\n                          " + _vm._s(date) + " " + _vm._s(lobby.names) + "\n                          "), _c('span', {
+      }, [_vm._v("\n\n                          " + _vm._s(lobbies.dayName) + " " + _vm._s(date) + "\n                          "), _c('span', {
         staticClass: "is-hidden-tablet-only"
       }, [_c('span', {
         staticClass: "is-hidden-mobile",
@@ -42873,7 +42857,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         attrs: {
           "d": "M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"
         }
-      })])]), _c('strong', [_vm._v(" From : " + _vm._s(lobby.data.from + '    To :   ' + lobby.data.to))])])])]), _vm._v(" "), _vm._l((lobby.data.rating), function(n) {
+      })])]), _c('strong', [_vm._v(" From : " + _vm._s(lobby.from + '    To :   ' + lobby.to))])])])]), _vm._v(" "), _vm._l((lobby.rating), function(n) {
         return _c('span', {
           staticClass: "ais-star-rating--star"
         })
@@ -42941,7 +42925,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "text",
       "id": "start",
-      "placeholder": "Date From"
+      "placeholder": "Date From",
+      "readonly": ""
     }
   })])]), _vm._v(" "), _c('li', [_c('a', {
     staticClass: " has-icon",
@@ -42963,7 +42948,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "text",
       "id": "end",
-      "placeholder": "Date To"
+      "placeholder": "Date To",
+      "readonly": ""
     }
   })])]), _vm._v(" "), _c('li', [_c('a', {
     staticClass: " has-icon",
@@ -43029,7 +43015,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "color": "rgb(136, 173, 72)"
     }
-  }), _vm._v("\r\n                            This Week\r\n                        ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)])])]), _vm._v(" "), _c('div', {
+  }), _vm._v("\r\n                            This Week\r\n                        ")])])])])]), _vm._v(" "), _c('div', {
     staticClass: "column is-9 primary"
   }, [_c('detail-view', {
     attrs: {
@@ -43049,55 +43035,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "loading": _vm.loading
     }
   })], 1)], 1)])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('a', {
-    staticClass: " has-icon",
-    attrs: {
-      "href": "/"
-    }
-  }, [_c('span', {
-    staticClass: "is-circle icon",
-    staticStyle: {
-      "color": "rgb(249, 169, 122)"
-    }
-  }), _vm._v("                            This Day\r\n                        ")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('a', {
-    staticClass: " has-icon",
-    attrs: {
-      "href": "/"
-    }
-  }, [_c('span', {
-    staticClass: "is-circle icon",
-    staticStyle: {
-      "color": "rgb(154, 212, 224)"
-    }
-  }), _vm._v("                           Popular All Time\r\n                        ")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('a', {
-    staticClass: " has-icon",
-    attrs: {
-      "href": "/"
-    }
-  }, [_c('span', {
-    staticClass: "is-circle icon",
-    staticStyle: {
-      "color": "rgb(249, 169, 122)"
-    }
-  }), _vm._v("                            Booked\r\n                        ")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('a', {
-    staticClass: " has-icon",
-    attrs: {
-      "href": "/"
-    }
-  }, [_c('span', {
-    staticClass: "is-circle icon",
-    staticStyle: {
-      "color": "rgb(154, 212, 224)"
-    }
-  }), _vm._v("                           UnBooked\r\n                        ")])])
-}]}
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

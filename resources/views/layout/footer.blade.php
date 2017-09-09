@@ -81,6 +81,7 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @if( ! empty($loadJs))
 
+    <script src="{{asset('js/lib/moment.js')}}"></script>
     <script src="{{asset('js/lib/pikaday.js')}}"></script>
     <script src="{{asset('js/all/all.js')}}"></script>
 

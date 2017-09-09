@@ -1,3 +1,3 @@
 
 
-<schedule id="{{ $detail->id }}"></schedule>
+    <schedule id="{{ $detail->id }}" ></schedule>

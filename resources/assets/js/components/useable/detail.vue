@@ -6,10 +6,11 @@
                 </h2>
 
 
-                <div v-for="( lobbies , lobbyId ) in data">
-                <ul class="lesson-list " v-for="( lobby   , date ) in lobbies">
+                <div v-for="( lobbies , date ) in data">
 
-                    <li :class="{'lesson-list-item is-flex is-aligned-center is-complete box' : lobby.booked , 'is-flex is-aligned-center box':! lobby.booked}">
+                <ul class="lesson-list " v-for=" ( lobby , index ) in lobbies">
+
+                    <li :class="{'lesson-list-item is-flex is-aligned-center is-complete box' : lobby.booked, 'is-flex is-aligned-center box':! lobby.booked }">
 
                         <span class="lesson-list-status ">
 
@@ -28,20 +29,20 @@
 
                         <div class="lesson-list-details flex pr-3-tablet pr-2-mobile">
                             <h5 class="lesson-list-title title mr-2-tablet mbb-1">
-                                {{ lobby.data.name }}
+
                             </h5>
 
                                 <div class="columns " style="color: rgb(136, 173, 72);">
                                     <div class="column is-bold">
-                                        {{ lobby.data.guests }} Guests
+                                        {{ lobby.guests }} Guests
                                     </div>
-                                    <div class="column is-bold" v-if="lobby.data.guests">
+                                    <div class="column is-bold" v-if="lobby.guests">
                                         Snacks
                                     </div>
                                     <div class="column is-bold" v-else>
                                         No Snacks
                                     </div>
-                                    <div class="column is-bold" v-if="lobby.data.dinner">
+                                    <div class="column is-bold" v-if="lobby.dinner">
                                         Dinner
                                     </div>
                                     <div class="column is-bold" v-else>
@@ -64,7 +65,7 @@
                             <p class="lesson-list-subtitle">
 
                             <h3 class="heading" v-if="lobby.booked">
-                                {{ lobby.data.price }}  JD <strong class="color-success">Not Available</strong>
+                                {{ lobby.price }}  JD <strong class="color-success">Not Available</strong>
                             </h3>
                             <h3 class="heading" v-else>
                                 {{ date }} <strong class="color-success">Available</strong>
@@ -74,20 +75,20 @@
 
                             <p class="  is-bold  " style="color: rgb(187, 130, 78);">
 
-                                {{ date }} {{ lobby.names }}
+                                {{ lobbies.dayName }} {{ date }}
                                 <span class="is-hidden-tablet-only">
                                     <span class="is-hidden-mobile" style="position: relative; top: 2px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" class="icon is-muted is-16x16">
                                         <path d="M8 8h3v2H7c-.55 0-1-.45-1-1V4h2v4zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z">
 
-                                </path></svg></span><strong> From : {{ lobby.data.from +'    To :   '+ lobby.data.to }}</strong></span></p>
+                                </path></svg></span><strong> From : {{ lobby.from +'    To :   '+ lobby.to }}</strong></span></p>
 
 
 
 
                     </div>
 
-                        <span v-for="n in lobby.data.rating"  class="ais-star-rating--star"></span>
+                        <span v-for="n in lobby.rating"  class="ais-star-rating--star"></span>
 
 
                     </li>
@@ -103,12 +104,8 @@
 
 <script>
 module.exports = {
+
         props: ['data','loading','filterBy'],
 
-        created: function () {
-
-        console.log('user data from parent component:')
-        console.log(this.user) //prints out an empty string
-        }
 }
 </script>

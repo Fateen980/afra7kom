@@ -12,7 +12,12 @@ class lobbyDetails extends Model
 
     public function booking(){
 
-        $this->hasMany('App\booking');
+        return $this->hasMany('App\booking','lobby_sub_id');
+    }
+
+    public function lobby(){
+
+       return  $this->belongsTo('App\lobby');
     }
 
 

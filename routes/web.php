@@ -31,6 +31,7 @@ Route::get('/hotels/detail/{id?}','hotelDetailController@index');
 
 Route::get('/home/page', ['as' => 'back', 'uses' => 'categoryController@index' ]);
 Route::get('/search','searchController@index');
+Route::get('/test/{id?}','bookingDatesController@index');
 
 //Lobby
 Route::get('/thisMonth/{id?}','bookingDatesController@thisMonth');

@@ -53,10 +53,9 @@ new Vue({
 
     data:{
 
-        dates:{ 'date':1,
-                'love':2}
        },
     components: {
+
         PulseLoader
     }
 
@@ -75,6 +74,8 @@ $('.showImg').click(function(e){
 
 $('.modal-close').click(function(){ $('#model').removeClass('is-active');});
 
+
+
 var startDate,
     endDate,
     updateStartDate = function() {
@@ -89,6 +90,7 @@ var startDate,
     },
     startPicker = new Pikaday({
         field: document.getElementById('start'),
+        format:'DD/MM/YYYY',
         minDate: new Date(),
         maxDate: new Date(2020, 12, 31),
         onSelect: function() {
@@ -98,6 +100,7 @@ var startDate,
     }),
     endPicker = new Pikaday({
         field: document.getElementById('end'),
+        format:'DD/MM/YYYY',
         minDate: new Date(),
         maxDate: new Date(2020, 12, 31),
         onSelect: function() {
@@ -117,3 +120,4 @@ if (_endDate) {
     endDate = _endDate;
     updateEndDate();
 }
+

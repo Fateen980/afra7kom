@@ -7,10 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
 
+    public function lobby(){
+
+        return $this->hasMany('App\lobby','hotel_id','id');
+    }
+
 
     public function booking(){
 
-        $this->hasMany('App\booking');
+        return $this->hasMany('App\booking');
     }
 
 

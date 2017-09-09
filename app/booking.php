@@ -9,20 +9,20 @@ class booking extends Model
 
 
 
-    public function category(){
+    public function Category(){
 
-        $this->belongsTo('App\Category');
+        return $this->belongsTo('App\Category','lobby_sub_id');
     }
 
 
     public function lobby(){
 
-        $this->belongsTo('App\lobby');
+        return $this->belongsTo('App\lobby');
     }
 
     public function lobbyDetails(){
 
-        $this->belongsTo('App\lobbyDetails');
+        return $this->belongsTo('App\lobbyDetails');
     }
 
 
