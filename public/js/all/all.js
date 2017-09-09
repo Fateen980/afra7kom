@@ -42735,8 +42735,6 @@ module.exports = Component.exports
 //
 //
 //
-//
-//
 
 module.exports = {
 
@@ -42828,7 +42826,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "heading"
       }, [_vm._v("\n                          " + _vm._s(lobby.price) + "  JD "), _c('strong', {
         staticClass: "color-success"
-      }, [_vm._v("Not Available")])]) : _c('h3', {
+      }, [_vm._v(" Available")])]) : _c('h3', {
         staticClass: "heading"
       }, [_vm._v("\n                          " + _vm._s(date) + " "), _c('strong', {
         staticClass: "color-success"

@@ -48,9 +48,7 @@
                                     <div class="column is-bold" v-else>
                                         No Dinner
                                     </div>
-
-
-
+                                    
                                     <div class="column">
 
 
