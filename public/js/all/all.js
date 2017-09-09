@@ -42731,10 +42731,6 @@ module.exports = Component.exports
 //
 //
 //
-//
-//
-//
-//
 
 module.exports = {
 
@@ -42818,9 +42814,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "column is-bold"
       }, [_vm._v("\n                                  Dinner\n                              ")]) : _c('div', {
         staticClass: "column is-bold"
-      }, [_vm._v("\n                                  No Dinner\n                              ")]), _vm._v(" "), _c('div', {
-        staticClass: "column"
-      })]), _vm._v(" "), _c('p', {
+      }, [_vm._v("\n                                  No Dinner\n                              ")]), _vm._v(" "), _vm._m(0, true)]), _vm._v(" "), _c('p', {
         staticClass: "lesson-list-subtitle"
       }), (lobby.booked) ? _c('h3', {
         staticClass: "heading"
@@ -42830,7 +42824,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "heading"
       }, [_vm._v("\n                          " + _vm._s(date) + " "), _c('strong', {
         staticClass: "color-success"
-      }, [_vm._v("Available")])]), _vm._v(" "), _c('p'), _vm._v(" "), _c('p', {
+      }, [_vm._v("Available")])]), _vm._v(" "), _c('p', {
         staticClass: "  is-bold  ",
         staticStyle: {
           "color": "rgb(187, 130, 78)"
@@ -42862,7 +42856,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       })], 2)])
     }))
   })], 2)
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "column"
+  }, [_c('a', {
+    staticClass: "button is-info is-outlined"
+  }, [_vm._v("Reserve")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
