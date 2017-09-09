@@ -72,7 +72,7 @@
 
                             <p class="  is-bold  " style="color: rgb(187, 130, 78);">
 
-                                {{ lobbies.dayName }} {{ date }}
+                                {{ lobby.name }} {{ date }}
                                 <span class="is-hidden-tablet-only">
                                     <span class="is-hidden-mobile" style="position: relative; top: 2px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" class="icon is-muted is-16x16">

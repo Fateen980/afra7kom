@@ -42829,7 +42829,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticStyle: {
           "color": "rgb(187, 130, 78)"
         }
-      }, [_vm._v("\n\n                          " + _vm._s(lobbies.dayName) + " " + _vm._s(date) + "\n                          "), _c('span', {
+      }, [_vm._v("\n\n                          " + _vm._s(lobby.name) + " " + _vm._s(date) + "\n                          "), _c('span', {
         staticClass: "is-hidden-tablet-only"
       }, [_c('span', {
         staticClass: "is-hidden-mobile",
