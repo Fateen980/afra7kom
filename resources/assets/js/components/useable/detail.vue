@@ -65,7 +65,7 @@
                             <p class="lesson-list-subtitle">
 
                             <h3 class="heading" v-if="lobby.booked">
-                                {{ lobby.price }}  JD <strong class="color-success">Not Available</strong>
+                                {{ lobby.price }}  JD <strong class="color-success"> Available</strong>
                             </h3>
                             <h3 class="heading" v-else>
                                 {{ date }} <strong class="color-success">Available</strong>
