@@ -79,7 +79,7 @@
         float: left;
         display: block;
         background: #34D08C;
-        color: white;
+        color: #333;
         border-radius: 2px;
         border: 0;
         margin-top: 20px;
