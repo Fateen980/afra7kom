@@ -62,6 +62,7 @@
         width: 100%;
         line-height: 32px;
         padding-bottom: 3px;
+        font-size: 19px;
         transition: opacity 200ms ease-in-out;
     }
 
@@ -175,7 +176,7 @@
         style: {
             base: {
                 iconColor: '#8898AA',
-                color: 'white',
+                color: '#333',
                 lineHeight: '36px',
                 fontWeight: 300,
                 fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
