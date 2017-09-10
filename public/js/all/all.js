@@ -42186,10 +42186,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         'detail-view': __WEBPACK_IMPORTED_MODULE_2__useable_detail_vue___default.a
     },
 
-    props: {
-
-        id: ''
-    },
+    props: ['id', 'action', 'csrf'],
 
     data: function data() {
 
@@ -42731,10 +42728,21 @@ module.exports = Component.exports
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 module.exports = {
 
-        props: ['data', 'loading', 'filterBy']
+        props: ['data', 'loading', 'filterBy', 'action', 'csrf']
 
 };
 
@@ -42814,7 +42822,38 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "column is-bold"
       }, [_vm._v("\n                                  Dinner\n                              ")]) : _c('div', {
         staticClass: "column is-bold"
-      }, [_vm._v("\n                                  No Dinner\n                              ")]), _vm._v(" "), _vm._m(0, true)]), _vm._v(" "), _c('p', {
+      }, [_vm._v("\n                                  No Dinner\n                              ")]), _vm._v(" "), _c('div', {
+        staticClass: "column"
+      }, [_c('form', {
+        attrs: {
+          "action": _vm.action,
+          "method": "POST"
+        }
+      }, [_c('input', {
+        attrs: {
+          "type": "hidden",
+          "name": "_token"
+        },
+        domProps: {
+          "value": _vm.csrf
+        }
+      }), _vm._v(" "), _c('input', {
+        attrs: {
+          "type": "hidden",
+          "name": "id"
+        },
+        domProps: {
+          "value": lobby.lobby_id
+        }
+      }), _vm._v(" "), _c('input', {
+        attrs: {
+          "type": "hidden",
+          "name": "price"
+        },
+        domProps: {
+          "value": lobby.price
+        }
+      }), _vm._v(" "), _vm._m(0, true)])])]), _vm._v(" "), _c('p', {
         staticClass: "lesson-list-subtitle"
       }), (lobby.booked) ? _c('h3', {
         staticClass: "heading"
@@ -42858,10 +42897,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })], 2)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "column"
-  }, [_c('a', {
-    staticClass: "button is-info is-outlined"
-  }, [_vm._v("Reserve")])])
+    staticClass: "control"
+  }, [_c('button', {
+    staticClass: "button is-primary is-outlined ",
+    attrs: {
+      "type": "submit",
+      "data-single-click": ""
+    }
+  }, [_vm._v("\n                                              Reserve\n                                          ")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -43018,6 +43061,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('detail-view', {
     attrs: {
       "filterBy": _vm.filterBy,
+      "action": _vm.action,
+      "csrf": _vm.csrf,
       "data": _vm.lobbiesData
     }
   }), _vm._v(" "), _c('div', {

@@ -51,8 +51,19 @@
 
                                     <div class="column">
 
-                                        <a class="button is-info is-outlined">Reserve</a>
+                                        <form  :action="action"  method="POST">
 
+                                            <input type="hidden" name="_token" :value="csrf">
+                                            <input type="hidden" name="id" :value="lobby.lobby_id">
+                                            <input type="hidden" name="price" :value="lobby.price">
+
+                                            <div class="control">
+                                                <button type="submit" data-single-click="" class="button is-primary is-outlined ">
+                                                    Reserve
+                                                </button>
+                                            </div>
+
+                                        </form>
                                     </div>
                                 </div>
 
@@ -99,7 +110,7 @@
 <script>
 module.exports = {
 
-        props: ['data','loading','filterBy'],
+        props: ['data','loading','filterBy','action','csrf'],
 
 }
 </script>

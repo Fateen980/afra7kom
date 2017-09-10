@@ -28,11 +28,11 @@
 
                                 <a href="/" @click.prevent="" class=" has-icon">
                                 <span class="is-circle icon" style="color: rgb(136, 173, 72);"></span>
-                                <input type="text"    id="start" class="input" placeholder="Date From" readonly >
+                                <input type="text" id="start" class="input" placeholder="Date From" readonly >
                                 </a></li>
                             <li><a href="/" @click.prevent="" class=" has-icon">
                                 <span class="is-circle icon" style="color: rgb(249, 169, 122);"></span>
-                                <input type="text"   id="end" class="input" placeholder="Date To" readonly></a></li>
+                                <input type="text" id="end" class="input" placeholder="Date To" readonly></a></li>
 
                             <li><a href="/" @click.prevent="thisDay" class=" has-icon">
                                 <span class="is-circle icon" style="color: rgb(136, 173, 72);"></span>
@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="column is-9 primary">
-                    <detail-view :filterBy="filterBy"  :data="lobbiesData"></detail-view>
+                    <detail-view :filterBy="filterBy" :action="action" :csrf="csrf"  :data="lobbiesData"></detail-view>
 
 
                     <div class="centered-heading" v-show="loading">
@@ -106,10 +106,7 @@
             'detail-view' : detailView
         },
 
-        props: {
-
-           id:''
-        },
+        props: ['id','action','csrf'],
 
         data() {
 
